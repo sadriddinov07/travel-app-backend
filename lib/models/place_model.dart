@@ -1,6 +1,6 @@
-import 'package:travel_app_backend/models/assistant_model/assistant_model.dart';
+import 'package:travel_app_backend/models/assistent_model.dart';
 import 'package:travel_app_backend/models/rating_model.dart';
-import 'package:travel_app_backend/models/user_model/user_model.dart';
+import 'package:travel_app_backend/models/user_model.dart';
 
 import 'package_model.dart';
 
@@ -36,7 +36,7 @@ class PlaceModel {
     final String country = json['country'] as String;
     final double price = json['price'] as double;
     final AssistantModel assistantModel =
-        AssistantModel.fromJson(json['assistantModel'] as Map<String, Object?>);
+    AssistantModel.fromJson(json['assistantModel'] as Map<String, Object?>);
     final List<RatingModel> ratings = (json['ratings'] as List)
         .map((rating) => RatingModel.fromJson(rating))
         .toList();
@@ -77,3 +77,5 @@ class PlaceModel {
     };
   }
 }
+
+

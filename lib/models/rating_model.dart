@@ -1,4 +1,4 @@
-import 'user_model/user_model.dart';
+import 'user_model.dart';
 
 class RatingModel {
   String id;
@@ -14,7 +14,7 @@ class RatingModel {
   factory RatingModel.fromJson(Map<String, Object?> json) {
     final String id = json['id'] as String;
     final UserModel userModel =
-        UserModel.fromJson(json['userModel'] as Map<String, Object?>);
+    UserModel.fromJson(json['userModel'] as Map<String, Object?>);
     final int rating = json['rating'] as int;
 
     return RatingModel(
