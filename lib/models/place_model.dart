@@ -1,5 +1,5 @@
 import 'package:travel_app_backend/models/assistent_model.dart';
-import 'package:travel_app_backend/models/rating_model.dart';
+import 'package:travel_app_backend/models/rating_model/rating_model.dart';
 import 'package:travel_app_backend/models/user_model.dart';
 
 import 'package_model.dart';

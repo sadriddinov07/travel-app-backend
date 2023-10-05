@@ -1,4 +1,4 @@
-import 'notification_model.dart';
+import 'notification_model/notification_model.dart';
 import 'place_model.dart';
 
 class UserModel {
