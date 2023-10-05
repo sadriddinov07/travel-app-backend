@@ -1,5 +1,5 @@
 import 'package:travel_app_backend/models/rating_model.dart';
-import 'package:travel_app_backend/models/user_model.dart';
+import 'package:travel_app_backend/models/user_model/user_model.dart';
 
 class PackageModel {
   String id;

@@ -1,4 +1,4 @@
-import 'package:travel_app_backend/models/assistent_model.dart';
+import 'package:travel_app_backend/models/assistant_model/assistant_model.dart';
 
 class NotificationModel {
   String id;
@@ -18,7 +18,7 @@ class NotificationModel {
   factory NotificationModel.fromJson(Map<String, Object?> json) {
     final String id = json['id'] as String;
     final AssistantModel assistantModel =
-    AssistantModel.fromJson(json['assistantModel'] as Map<String, Object?>);
+        AssistantModel.fromJson(json['assistantModel'] as Map<String, Object?>);
     final String title = json['title'] as String;
     final String content = json['content'] as String;
     final DateTime createdAt = DateTime.parse(json['createdAt'] as String);
