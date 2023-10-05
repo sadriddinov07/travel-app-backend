@@ -2,7 +2,6 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:travel_app_backend/models/assistant_model/assistant_model.dart';
 
 part 'notification_model.freezed.dart';
-
 part 'notification_model.g.dart';
 
 @freezed

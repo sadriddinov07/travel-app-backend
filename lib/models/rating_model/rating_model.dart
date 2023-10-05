@@ -1,10 +1,8 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:travel_app_backend/models/user_model.dart';
+import 'package:travel_app_backend/models/user_model/user_model.dart';
 
 part 'rating_model.freezed.dart';
-
 part 'rating_model.g.dart';
-
 
 @freezed
 class RatingModel with _$RatingModel {
