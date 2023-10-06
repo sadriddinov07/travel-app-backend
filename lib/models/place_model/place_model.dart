@@ -23,6 +23,6 @@ class PlaceModel with _$PlaceModel {
     required DateTime flyDate,
   }) = _PlaceModel;
 
-  factory PlaceModel.fromJson(Map<String, dynamic> json) =>
+  factory PlaceModel.fromJson(Map<String, Object?> json) =>
       _$PlaceModelFromJson(json);
 }

@@ -19,6 +19,6 @@ class PackageModel with _$PackageModel {
         required DateTime flyDate,
     }) = _PackageModel;
 
-    factory PackageModel.fromJson(Map<String, dynamic> json) =>
+    factory PackageModel.fromJson(Map<String, Object?> json) =>
         _$PackageModelFromJson(json);
 }
