@@ -36,8 +36,6 @@ mixin _$PlaceModel {
 
   List<RatingModel> get ratings => throw _privateConstructorUsedError;
 
-  List<PackageModel> get packages => throw _privateConstructorUsedError;
-
   List<UserModel> get bookedUsers => throw _privateConstructorUsedError;
 
   DateTime get flyDate => throw _privateConstructorUsedError;
@@ -65,7 +63,6 @@ abstract class $PlaceModelCopyWith<$Res> {
       double price,
       AssistantModel assistantModel,
       List<RatingModel> ratings,
-      List<PackageModel> packages,
       List<UserModel> bookedUsers,
       DateTime flyDate});
 
@@ -94,7 +91,6 @@ class _$PlaceModelCopyWithImpl<$Res, $Val extends PlaceModel>
     Object? price = null,
     Object? assistantModel = null,
     Object? ratings = null,
-    Object? packages = null,
     Object? bookedUsers = null,
     Object? flyDate = null,
   }) {
@@ -131,10 +127,6 @@ class _$PlaceModelCopyWithImpl<$Res, $Val extends PlaceModel>
           ? _value.ratings
           : ratings // ignore: cast_nullable_to_non_nullable
               as List<RatingModel>,
-      packages: null == packages
-          ? _value.packages
-          : packages // ignore: cast_nullable_to_non_nullable
-              as List<PackageModel>,
       bookedUsers: null == bookedUsers
           ? _value.bookedUsers
           : bookedUsers // ignore: cast_nullable_to_non_nullable
@@ -173,7 +165,6 @@ abstract class _$$PlaceModelImplCopyWith<$Res>
       double price,
       AssistantModel assistantModel,
       List<RatingModel> ratings,
-      List<PackageModel> packages,
       List<UserModel> bookedUsers,
       DateTime flyDate});
 
@@ -200,7 +191,6 @@ class __$$PlaceModelImplCopyWithImpl<$Res>
     Object? price = null,
     Object? assistantModel = null,
     Object? ratings = null,
-    Object? packages = null,
     Object? bookedUsers = null,
     Object? flyDate = null,
   }) {
@@ -237,10 +227,6 @@ class __$$PlaceModelImplCopyWithImpl<$Res>
           ? _value._ratings
           : ratings // ignore: cast_nullable_to_non_nullable
               as List<RatingModel>,
-      packages: null == packages
-          ? _value._packages
-          : packages // ignore: cast_nullable_to_non_nullable
-              as List<PackageModel>,
       bookedUsers: null == bookedUsers
           ? _value._bookedUsers
           : bookedUsers // ignore: cast_nullable_to_non_nullable
@@ -265,11 +251,9 @@ class _$PlaceModelImpl implements _PlaceModel {
       required this.price,
       required this.assistantModel,
       required final List<RatingModel> ratings,
-      required final List<PackageModel> packages,
       required final List<UserModel> bookedUsers,
       required this.flyDate})
       : _ratings = ratings,
-        _packages = packages,
         _bookedUsers = bookedUsers;
 
   factory _$PlaceModelImpl.fromJson(Map<String, dynamic> json) =>
@@ -298,15 +282,6 @@ class _$PlaceModelImpl implements _PlaceModel {
     return EqualUnmodifiableListView(_ratings);
   }
 
-  final List<PackageModel> _packages;
-
-  @override
-  List<PackageModel> get packages {
-    if (_packages is EqualUnmodifiableListView) return _packages;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_packages);
-  }
-
   final List<UserModel> _bookedUsers;
 
   @override
@@ -321,7 +296,7 @@ class _$PlaceModelImpl implements _PlaceModel {
 
   @override
   String toString() {
-    return 'PlaceModel(id: $id, name: $name, city: $city, country: $country, description: $description, price: $price, assistantModel: $assistantModel, ratings: $ratings, packages: $packages, bookedUsers: $bookedUsers, flyDate: $flyDate)';
+    return 'PlaceModel(id: $id, name: $name, city: $city, country: $country, description: $description, price: $price, assistantModel: $assistantModel, ratings: $ratings, bookedUsers: $bookedUsers, flyDate: $flyDate)';
   }
 
   @override
@@ -339,7 +314,6 @@ class _$PlaceModelImpl implements _PlaceModel {
             (identical(other.assistantModel, assistantModel) ||
                 other.assistantModel == assistantModel) &&
             const DeepCollectionEquality().equals(other._ratings, _ratings) &&
-            const DeepCollectionEquality().equals(other._packages, _packages) &&
             const DeepCollectionEquality()
                 .equals(other._bookedUsers, _bookedUsers) &&
             (identical(other.flyDate, flyDate) || other.flyDate == flyDate));
@@ -357,7 +331,6 @@ class _$PlaceModelImpl implements _PlaceModel {
       price,
       assistantModel,
       const DeepCollectionEquality().hash(_ratings),
-      const DeepCollectionEquality().hash(_packages),
       const DeepCollectionEquality().hash(_bookedUsers),
       flyDate);
 
@@ -385,7 +358,6 @@ abstract class _PlaceModel implements PlaceModel {
       required final double price,
       required final AssistantModel assistantModel,
       required final List<RatingModel> ratings,
-      required final List<PackageModel> packages,
       required final List<UserModel> bookedUsers,
       required final DateTime flyDate}) = _$PlaceModelImpl;
 
@@ -415,9 +387,6 @@ abstract class _PlaceModel implements PlaceModel {
 
   @override
   List<RatingModel> get ratings;
-
-  @override
-  List<PackageModel> get packages;
 
   @override
   List<UserModel> get bookedUsers;
