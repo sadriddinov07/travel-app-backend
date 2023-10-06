@@ -21,27 +21,17 @@ AssistantModel _$AssistantModelFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$AssistantModel {
   String get id => throw _privateConstructorUsedError;
-
   String get firstName => throw _privateConstructorUsedError;
-
   String get lastName => throw _privateConstructorUsedError;
-
   String get location => throw _privateConstructorUsedError;
-
   String get email => throw _privateConstructorUsedError;
-
   String get password => throw _privateConstructorUsedError;
-
   String get phoneNumber => throw _privateConstructorUsedError;
-
   String get imageUrl => throw _privateConstructorUsedError;
-
   bool get isOnline => throw _privateConstructorUsedError;
-
   DateTime get lastVisit => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   $AssistantModelCopyWith<AssistantModel> get copyWith =>
       throw _privateConstructorUsedError;
@@ -52,7 +42,6 @@ abstract class $AssistantModelCopyWith<$Res> {
   factory $AssistantModelCopyWith(
           AssistantModel value, $Res Function(AssistantModel) then) =
       _$AssistantModelCopyWithImpl<$Res, AssistantModel>;
-
   @useResult
   $Res call(
       {String id,
@@ -74,7 +63,6 @@ class _$AssistantModelCopyWithImpl<$Res, $Val extends AssistantModel>
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -143,7 +131,6 @@ abstract class _$$AssistantModelImplCopyWith<$Res>
   factory _$$AssistantModelImplCopyWith(_$AssistantModelImpl value,
           $Res Function(_$AssistantModelImpl) then) =
       __$$AssistantModelImplCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call(
@@ -334,34 +321,24 @@ abstract class _AssistantModel implements AssistantModel {
 
   @override
   String get id;
-
   @override
   String get firstName;
-
   @override
   String get lastName;
-
   @override
   String get location;
-
   @override
   String get email;
-
   @override
   String get password;
-
   @override
   String get phoneNumber;
-
   @override
   String get imageUrl;
-
   @override
   bool get isOnline;
-
   @override
   DateTime get lastVisit;
-
   @override
   @JsonKey(ignore: true)
   _$$AssistantModelImplCopyWith<_$AssistantModelImpl> get copyWith =>
