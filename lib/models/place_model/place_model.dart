@@ -19,6 +19,7 @@ class PlaceModel with _$PlaceModel {
     required List<RatingModel> ratings,
     required List<UserModel> bookedUsers,
     required DateTime flyDate,
+    required List<String> placeImagesUrls,
   }) = _PlaceModel;
 
   factory PlaceModel.fromJson(Map<String, Object?> json) =>

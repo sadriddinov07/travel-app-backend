@@ -40,6 +40,8 @@ mixin _$PlaceModel {
 
   DateTime get flyDate => throw _privateConstructorUsedError;
 
+  List<String> get placeImagesUrls => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -64,7 +66,8 @@ abstract class $PlaceModelCopyWith<$Res> {
       AssistantModel assistantModel,
       List<RatingModel> ratings,
       List<UserModel> bookedUsers,
-      DateTime flyDate});
+      DateTime flyDate,
+      List<String> placeImagesUrls});
 
   $AssistantModelCopyWith<$Res> get assistantModel;
 }
@@ -93,6 +96,7 @@ class _$PlaceModelCopyWithImpl<$Res, $Val extends PlaceModel>
     Object? ratings = null,
     Object? bookedUsers = null,
     Object? flyDate = null,
+    Object? placeImagesUrls = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -135,6 +139,10 @@ class _$PlaceModelCopyWithImpl<$Res, $Val extends PlaceModel>
           ? _value.flyDate
           : flyDate // ignore: cast_nullable_to_non_nullable
               as DateTime,
+      placeImagesUrls: null == placeImagesUrls
+          ? _value.placeImagesUrls
+          : placeImagesUrls // ignore: cast_nullable_to_non_nullable
+              as List<String>,
     ) as $Val);
   }
 
@@ -166,7 +174,8 @@ abstract class _$$PlaceModelImplCopyWith<$Res>
       AssistantModel assistantModel,
       List<RatingModel> ratings,
       List<UserModel> bookedUsers,
-      DateTime flyDate});
+      DateTime flyDate,
+      List<String> placeImagesUrls});
 
   @override
   $AssistantModelCopyWith<$Res> get assistantModel;
@@ -193,6 +202,7 @@ class __$$PlaceModelImplCopyWithImpl<$Res>
     Object? ratings = null,
     Object? bookedUsers = null,
     Object? flyDate = null,
+    Object? placeImagesUrls = null,
   }) {
     return _then(_$PlaceModelImpl(
       id: null == id
@@ -235,6 +245,10 @@ class __$$PlaceModelImplCopyWithImpl<$Res>
           ? _value.flyDate
           : flyDate // ignore: cast_nullable_to_non_nullable
               as DateTime,
+      placeImagesUrls: null == placeImagesUrls
+          ? _value._placeImagesUrls
+          : placeImagesUrls // ignore: cast_nullable_to_non_nullable
+              as List<String>,
     ));
   }
 }
@@ -252,9 +266,11 @@ class _$PlaceModelImpl implements _PlaceModel {
       required this.assistantModel,
       required final List<RatingModel> ratings,
       required final List<UserModel> bookedUsers,
-      required this.flyDate})
+      required this.flyDate,
+      required final List<String> placeImagesUrls})
       : _ratings = ratings,
-        _bookedUsers = bookedUsers;
+        _bookedUsers = bookedUsers,
+        _placeImagesUrls = placeImagesUrls;
 
   factory _$PlaceModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$PlaceModelImplFromJson(json);
@@ -293,10 +309,18 @@ class _$PlaceModelImpl implements _PlaceModel {
 
   @override
   final DateTime flyDate;
+  final List<String> _placeImagesUrls;
+
+  @override
+  List<String> get placeImagesUrls {
+    if (_placeImagesUrls is EqualUnmodifiableListView) return _placeImagesUrls;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_placeImagesUrls);
+  }
 
   @override
   String toString() {
-    return 'PlaceModel(id: $id, name: $name, city: $city, country: $country, description: $description, price: $price, assistantModel: $assistantModel, ratings: $ratings, bookedUsers: $bookedUsers, flyDate: $flyDate)';
+    return 'PlaceModel(id: $id, name: $name, city: $city, country: $country, description: $description, price: $price, assistantModel: $assistantModel, ratings: $ratings, bookedUsers: $bookedUsers, flyDate: $flyDate, placeImagesUrls: $placeImagesUrls)';
   }
 
   @override
@@ -316,7 +340,9 @@ class _$PlaceModelImpl implements _PlaceModel {
             const DeepCollectionEquality().equals(other._ratings, _ratings) &&
             const DeepCollectionEquality()
                 .equals(other._bookedUsers, _bookedUsers) &&
-            (identical(other.flyDate, flyDate) || other.flyDate == flyDate));
+            (identical(other.flyDate, flyDate) || other.flyDate == flyDate) &&
+            const DeepCollectionEquality()
+                .equals(other._placeImagesUrls, _placeImagesUrls));
   }
 
   @JsonKey(ignore: true)
@@ -332,7 +358,8 @@ class _$PlaceModelImpl implements _PlaceModel {
       assistantModel,
       const DeepCollectionEquality().hash(_ratings),
       const DeepCollectionEquality().hash(_bookedUsers),
-      flyDate);
+      flyDate,
+      const DeepCollectionEquality().hash(_placeImagesUrls));
 
   @JsonKey(ignore: true)
   @override
@@ -359,7 +386,8 @@ abstract class _PlaceModel implements PlaceModel {
       required final AssistantModel assistantModel,
       required final List<RatingModel> ratings,
       required final List<UserModel> bookedUsers,
-      required final DateTime flyDate}) = _$PlaceModelImpl;
+      required final DateTime flyDate,
+      required final List<String> placeImagesUrls}) = _$PlaceModelImpl;
 
   factory _PlaceModel.fromJson(Map<String, dynamic> json) =
       _$PlaceModelImpl.fromJson;
@@ -393,6 +421,9 @@ abstract class _PlaceModel implements PlaceModel {
 
   @override
   DateTime get flyDate;
+
+  @override
+  List<String> get placeImagesUrls;
 
   @override
   @JsonKey(ignore: true)

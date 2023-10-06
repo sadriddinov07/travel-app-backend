@@ -23,6 +23,9 @@ _$PlaceModelImpl _$$PlaceModelImplFromJson(Map<String, dynamic> json) =>
           .map((e) => UserModel.fromJson(e as Map<String, dynamic>))
           .toList(),
       flyDate: DateTime.parse(json['flyDate'] as String),
+      placeImagesUrls: (json['placeImagesUrls'] as List<dynamic>)
+          .map((e) => e as String)
+          .toList(),
     );
 
 Map<String, dynamic> _$$PlaceModelImplToJson(_$PlaceModelImpl instance) =>
@@ -37,4 +40,5 @@ Map<String, dynamic> _$$PlaceModelImplToJson(_$PlaceModelImpl instance) =>
       'ratings': instance.ratings,
       'bookedUsers': instance.bookedUsers,
       'flyDate': instance.flyDate.toIso8601String(),
+      'placeImagesUrls': instance.placeImagesUrls,
     };
