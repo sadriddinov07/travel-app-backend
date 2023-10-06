@@ -21,14 +21,21 @@ MessageModel _$MessageModelFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$MessageModel {
   UserModel get fromUser => throw _privateConstructorUsedError;
+
   UserModel get toUser => throw _privateConstructorUsedError;
+
   String get id => throw _privateConstructorUsedError;
+
   String get content => throw _privateConstructorUsedError;
+
   DateTime get createdTime => throw _privateConstructorUsedError;
+
   bool get isSeen => throw _privateConstructorUsedError;
+
   MessageType get messageType => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
   $MessageModelCopyWith<MessageModel> get copyWith =>
       throw _privateConstructorUsedError;
@@ -39,6 +46,7 @@ abstract class $MessageModelCopyWith<$Res> {
   factory $MessageModelCopyWith(
           MessageModel value, $Res Function(MessageModel) then) =
       _$MessageModelCopyWithImpl<$Res, MessageModel>;
+
   @useResult
   $Res call(
       {UserModel fromUser,
@@ -50,6 +58,7 @@ abstract class $MessageModelCopyWith<$Res> {
       MessageType messageType});
 
   $UserModelCopyWith<$Res> get fromUser;
+
   $UserModelCopyWith<$Res> get toUser;
 }
 
@@ -60,6 +69,7 @@ class _$MessageModelCopyWithImpl<$Res, $Val extends MessageModel>
 
   // ignore: unused_field
   final $Val _value;
+
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -129,6 +139,7 @@ abstract class _$$MessageModelImplCopyWith<$Res>
   factory _$$MessageModelImplCopyWith(
           _$MessageModelImpl value, $Res Function(_$MessageModelImpl) then) =
       __$$MessageModelImplCopyWithImpl<$Res>;
+
   @override
   @useResult
   $Res call(
@@ -142,6 +153,7 @@ abstract class _$$MessageModelImplCopyWith<$Res>
 
   @override
   $UserModelCopyWith<$Res> get fromUser;
+
   @override
   $UserModelCopyWith<$Res> get toUser;
 }
@@ -285,18 +297,25 @@ abstract class _MessageModel implements MessageModel {
 
   @override
   UserModel get fromUser;
+
   @override
   UserModel get toUser;
+
   @override
   String get id;
+
   @override
   String get content;
+
   @override
   DateTime get createdTime;
+
   @override
   bool get isSeen;
+
   @override
   MessageType get messageType;
+
   @override
   @JsonKey(ignore: true)
   _$$MessageModelImplCopyWith<_$MessageModelImpl> get copyWith =>

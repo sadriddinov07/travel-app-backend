@@ -21,7 +21,7 @@ class MessageModel with _$MessageModel {
       _$MessageModelFromJson(json);
 }
 
-enum MessageType{
+enum MessageType {
   text,
   image,
 }

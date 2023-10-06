@@ -21,18 +21,29 @@ PlaceModel _$PlaceModelFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$PlaceModel {
   String get id => throw _privateConstructorUsedError;
+
   String get name => throw _privateConstructorUsedError;
+
   String get city => throw _privateConstructorUsedError;
+
   String get country => throw _privateConstructorUsedError;
+
   String get description => throw _privateConstructorUsedError;
+
   double get price => throw _privateConstructorUsedError;
+
   AssistantModel get assistantModel => throw _privateConstructorUsedError;
+
   List<RatingModel> get ratings => throw _privateConstructorUsedError;
+
   List<UserModel> get bookedUsers => throw _privateConstructorUsedError;
+
   DateTime get flyDate => throw _privateConstructorUsedError;
+
   List<String> get placeImagesUrls => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
   $PlaceModelCopyWith<PlaceModel> get copyWith =>
       throw _privateConstructorUsedError;
@@ -43,6 +54,7 @@ abstract class $PlaceModelCopyWith<$Res> {
   factory $PlaceModelCopyWith(
           PlaceModel value, $Res Function(PlaceModel) then) =
       _$PlaceModelCopyWithImpl<$Res, PlaceModel>;
+
   @useResult
   $Res call(
       {String id,
@@ -67,6 +79,7 @@ class _$PlaceModelCopyWithImpl<$Res, $Val extends PlaceModel>
 
   // ignore: unused_field
   final $Val _value;
+
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -148,6 +161,7 @@ abstract class _$$PlaceModelImplCopyWith<$Res>
   factory _$$PlaceModelImplCopyWith(
           _$PlaceModelImpl value, $Res Function(_$PlaceModelImpl) then) =
       __$$PlaceModelImplCopyWithImpl<$Res>;
+
   @override
   @useResult
   $Res call(
@@ -276,6 +290,7 @@ class _$PlaceModelImpl implements _PlaceModel {
   @override
   final AssistantModel assistantModel;
   final List<RatingModel> _ratings;
+
   @override
   List<RatingModel> get ratings {
     if (_ratings is EqualUnmodifiableListView) return _ratings;
@@ -284,6 +299,7 @@ class _$PlaceModelImpl implements _PlaceModel {
   }
 
   final List<UserModel> _bookedUsers;
+
   @override
   List<UserModel> get bookedUsers {
     if (_bookedUsers is EqualUnmodifiableListView) return _bookedUsers;
@@ -294,6 +310,7 @@ class _$PlaceModelImpl implements _PlaceModel {
   @override
   final DateTime flyDate;
   final List<String> _placeImagesUrls;
+
   @override
   List<String> get placeImagesUrls {
     if (_placeImagesUrls is EqualUnmodifiableListView) return _placeImagesUrls;
@@ -377,26 +394,37 @@ abstract class _PlaceModel implements PlaceModel {
 
   @override
   String get id;
+
   @override
   String get name;
+
   @override
   String get city;
+
   @override
   String get country;
+
   @override
   String get description;
+
   @override
   double get price;
+
   @override
   AssistantModel get assistantModel;
+
   @override
   List<RatingModel> get ratings;
+
   @override
   List<UserModel> get bookedUsers;
+
   @override
   DateTime get flyDate;
+
   @override
   List<String> get placeImagesUrls;
+
   @override
   @JsonKey(ignore: true)
   _$$PlaceModelImplCopyWith<_$PlaceModelImpl> get copyWith =>
