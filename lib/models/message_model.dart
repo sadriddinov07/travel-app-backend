@@ -1,4 +1,4 @@
-// import 'package:travel_backend/models/user_model.dart';
+// import 'package:travel_app_backend/models/user_model/user_model.dart';
 //
 // class MessageModel {
 //   final UserModel fromUserModel;

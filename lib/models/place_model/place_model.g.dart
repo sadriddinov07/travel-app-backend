@@ -12,6 +12,7 @@ _$PlaceModelImpl _$$PlaceModelImplFromJson(Map<String, dynamic> json) =>
       name: json['name'] as String,
       city: json['city'] as String,
       country: json['country'] as String,
+      description: json['description'] as String,
       price: (json['price'] as num).toDouble(),
       assistantModel: AssistantModel.fromJson(
           json['assistantModel'] as Map<String, dynamic>),
@@ -33,6 +34,7 @@ Map<String, dynamic> _$$PlaceModelImplToJson(_$PlaceModelImpl instance) =>
       'name': instance.name,
       'city': instance.city,
       'country': instance.country,
+      'description': instance.description,
       'price': instance.price,
       'assistantModel': instance.assistantModel,
       'ratings': instance.ratings,

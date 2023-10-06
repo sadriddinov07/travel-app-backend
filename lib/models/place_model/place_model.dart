@@ -15,6 +15,7 @@ class PlaceModel with _$PlaceModel {
     required String name,
     required String city,
     required String country,
+    required String description,
     required double price,
     required AssistantModel assistantModel,
     required List<RatingModel> ratings,

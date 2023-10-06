@@ -24,6 +24,7 @@ mixin _$PlaceModel {
   String get name => throw _privateConstructorUsedError;
   String get city => throw _privateConstructorUsedError;
   String get country => throw _privateConstructorUsedError;
+  String get description => throw _privateConstructorUsedError;
   double get price => throw _privateConstructorUsedError;
   AssistantModel get assistantModel => throw _privateConstructorUsedError;
   List<RatingModel> get ratings => throw _privateConstructorUsedError;
@@ -48,6 +49,7 @@ abstract class $PlaceModelCopyWith<$Res> {
       String name,
       String city,
       String country,
+      String description,
       double price,
       AssistantModel assistantModel,
       List<RatingModel> ratings,
@@ -75,6 +77,7 @@ class _$PlaceModelCopyWithImpl<$Res, $Val extends PlaceModel>
     Object? name = null,
     Object? city = null,
     Object? country = null,
+    Object? description = null,
     Object? price = null,
     Object? assistantModel = null,
     Object? ratings = null,
@@ -98,6 +101,10 @@ class _$PlaceModelCopyWithImpl<$Res, $Val extends PlaceModel>
       country: null == country
           ? _value.country
           : country // ignore: cast_nullable_to_non_nullable
+              as String,
+      description: null == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
               as String,
       price: null == price
           ? _value.price
@@ -148,6 +155,7 @@ abstract class _$$PlaceModelImplCopyWith<$Res>
       String name,
       String city,
       String country,
+      String description,
       double price,
       AssistantModel assistantModel,
       List<RatingModel> ratings,
@@ -174,6 +182,7 @@ class __$$PlaceModelImplCopyWithImpl<$Res>
     Object? name = null,
     Object? city = null,
     Object? country = null,
+    Object? description = null,
     Object? price = null,
     Object? assistantModel = null,
     Object? ratings = null,
@@ -197,6 +206,10 @@ class __$$PlaceModelImplCopyWithImpl<$Res>
       country: null == country
           ? _value.country
           : country // ignore: cast_nullable_to_non_nullable
+              as String,
+      description: null == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
               as String,
       price: null == price
           ? _value.price
@@ -234,6 +247,7 @@ class _$PlaceModelImpl implements _PlaceModel {
       required this.name,
       required this.city,
       required this.country,
+      required this.description,
       required this.price,
       required this.assistantModel,
       required final List<RatingModel> ratings,
@@ -255,6 +269,8 @@ class _$PlaceModelImpl implements _PlaceModel {
   final String city;
   @override
   final String country;
+  @override
+  final String description;
   @override
   final double price;
   @override
@@ -288,7 +304,7 @@ class _$PlaceModelImpl implements _PlaceModel {
 
   @override
   String toString() {
-    return 'PlaceModel(id: $id, name: $name, city: $city, country: $country, price: $price, assistantModel: $assistantModel, ratings: $ratings, packages: $packages, bookedUsers: $bookedUsers, flyDate: $flyDate)';
+    return 'PlaceModel(id: $id, name: $name, city: $city, country: $country, description: $description, price: $price, assistantModel: $assistantModel, ratings: $ratings, packages: $packages, bookedUsers: $bookedUsers, flyDate: $flyDate)';
   }
 
   @override
@@ -300,6 +316,8 @@ class _$PlaceModelImpl implements _PlaceModel {
             (identical(other.name, name) || other.name == name) &&
             (identical(other.city, city) || other.city == city) &&
             (identical(other.country, country) || other.country == country) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
             (identical(other.price, price) || other.price == price) &&
             (identical(other.assistantModel, assistantModel) ||
                 other.assistantModel == assistantModel) &&
@@ -318,6 +336,7 @@ class _$PlaceModelImpl implements _PlaceModel {
       name,
       city,
       country,
+      description,
       price,
       assistantModel,
       const DeepCollectionEquality().hash(_ratings),
@@ -345,6 +364,7 @@ abstract class _PlaceModel implements PlaceModel {
       required final String name,
       required final String city,
       required final String country,
+      required final String description,
       required final double price,
       required final AssistantModel assistantModel,
       required final List<RatingModel> ratings,
@@ -363,6 +383,8 @@ abstract class _PlaceModel implements PlaceModel {
   String get city;
   @override
   String get country;
+  @override
+  String get description;
   @override
   double get price;
   @override
