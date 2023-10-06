@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:travel_app_backend/models/user_model/user_model.dart';
+import 'package:travel_app_backend/domain/models/user_model/user_model.dart';
 
 part 'message_model.freezed.dart';
 part 'message_model.g.dart';

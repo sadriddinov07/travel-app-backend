@@ -1,7 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:travel_app_backend/models/assistant_model/assistant_model.dart';
-import 'package:travel_app_backend/models/rating_model/rating_model.dart';
-import 'package:travel_app_backend/models/user_model/user_model.dart';
+import 'package:travel_app_backend/domain/models/assistant_model/assistant_model.dart';
+import 'package:travel_app_backend/domain/models/rating_model/rating_model.dart';
+import 'package:travel_app_backend/domain/models/user_model/user_model.dart';
 
 part 'place_model.freezed.dart';
 part 'place_model.g.dart';

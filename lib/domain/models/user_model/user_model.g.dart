@@ -27,6 +27,9 @@ _$UserModelImpl _$$UserModelImplFromJson(Map<String, dynamic> json) =>
       notifications: (json['notifications'] as List<dynamic>)
           .map((e) => NotificationModel.fromJson(e as Map<String, dynamic>))
           .toList(),
+      messages: (json['messages'] as List<dynamic>)
+          .map((e) => MessageModel.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
 
 Map<String, dynamic> _$$UserModelImplToJson(_$UserModelImpl instance) =>
@@ -45,4 +48,5 @@ Map<String, dynamic> _$$UserModelImplToJson(_$UserModelImpl instance) =>
       'isOnline': instance.isOnline,
       'lastVisit': instance.lastVisit.toIso8601String(),
       'notifications': instance.notifications.map((e) => e.toJson()).toList(),
+      'messages': instance.messages.map((e) => e.toJson()).toList(),
     };

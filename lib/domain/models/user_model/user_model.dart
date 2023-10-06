@@ -1,7 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:travel_app_backend/models/message_model/message_model.dart';
-import 'package:travel_app_backend/models/notification_model/notification_model.dart';
-import 'package:travel_app_backend/models/place_model/place_model.dart';
+import 'package:travel_app_backend/domain/models/message_model/message_model.dart';
+import 'package:travel_app_backend/domain/models/notification_model/notification_model.dart';
+import 'package:travel_app_backend/domain/models/place_model/place_model.dart';
 
 part 'user_model.freezed.dart';
 part 'user_model.g.dart';

@@ -34,6 +34,7 @@ mixin _$UserModel {
   DateTime get lastVisit => throw _privateConstructorUsedError;
   List<NotificationModel> get notifications =>
       throw _privateConstructorUsedError;
+  List<MessageModel> get messages => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -59,7 +60,8 @@ abstract class $UserModelCopyWith<$Res> {
       List<PlaceModel> bookmarkedPlaces,
       bool isOnline,
       DateTime lastVisit,
-      List<NotificationModel> notifications});
+      List<NotificationModel> notifications,
+      List<MessageModel> messages});
 }
 
 /// @nodoc
@@ -88,6 +90,7 @@ class _$UserModelCopyWithImpl<$Res, $Val extends UserModel>
     Object? isOnline = null,
     Object? lastVisit = null,
     Object? notifications = null,
+    Object? messages = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -142,6 +145,10 @@ class _$UserModelCopyWithImpl<$Res, $Val extends UserModel>
           ? _value.notifications
           : notifications // ignore: cast_nullable_to_non_nullable
               as List<NotificationModel>,
+      messages: null == messages
+          ? _value.messages
+          : messages // ignore: cast_nullable_to_non_nullable
+              as List<MessageModel>,
     ) as $Val);
   }
 }
@@ -167,7 +174,8 @@ abstract class _$$UserModelImplCopyWith<$Res>
       List<PlaceModel> bookmarkedPlaces,
       bool isOnline,
       DateTime lastVisit,
-      List<NotificationModel> notifications});
+      List<NotificationModel> notifications,
+      List<MessageModel> messages});
 }
 
 /// @nodoc
@@ -194,6 +202,7 @@ class __$$UserModelImplCopyWithImpl<$Res>
     Object? isOnline = null,
     Object? lastVisit = null,
     Object? notifications = null,
+    Object? messages = null,
   }) {
     return _then(_$UserModelImpl(
       id: null == id
@@ -248,6 +257,10 @@ class __$$UserModelImplCopyWithImpl<$Res>
           ? _value._notifications
           : notifications // ignore: cast_nullable_to_non_nullable
               as List<NotificationModel>,
+      messages: null == messages
+          ? _value._messages
+          : messages // ignore: cast_nullable_to_non_nullable
+              as List<MessageModel>,
     ));
   }
 }
@@ -269,10 +282,12 @@ class _$UserModelImpl implements _UserModel {
       required final List<PlaceModel> bookmarkedPlaces,
       required this.isOnline,
       required this.lastVisit,
-      required final List<NotificationModel> notifications})
+      required final List<NotificationModel> notifications,
+      required final List<MessageModel> messages})
       : _likedPlaces = likedPlaces,
         _bookmarkedPlaces = bookmarkedPlaces,
-        _notifications = notifications;
+        _notifications = notifications,
+        _messages = messages;
 
   factory _$UserModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$UserModelImplFromJson(json);
@@ -322,9 +337,17 @@ class _$UserModelImpl implements _UserModel {
     return EqualUnmodifiableListView(_notifications);
   }
 
+  final List<MessageModel> _messages;
+  @override
+  List<MessageModel> get messages {
+    if (_messages is EqualUnmodifiableListView) return _messages;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_messages);
+  }
+
   @override
   String toString() {
-    return 'UserModel(id: $id, firstName: $firstName, lastName: $lastName, location: $location, email: $email, password: $password, phoneNumber: $phoneNumber, imageUrl: $imageUrl, likedPlaces: $likedPlaces, bookmarkedPlaces: $bookmarkedPlaces, isOnline: $isOnline, lastVisit: $lastVisit, notifications: $notifications)';
+    return 'UserModel(id: $id, firstName: $firstName, lastName: $lastName, location: $location, email: $email, password: $password, phoneNumber: $phoneNumber, imageUrl: $imageUrl, likedPlaces: $likedPlaces, bookmarkedPlaces: $bookmarkedPlaces, isOnline: $isOnline, lastVisit: $lastVisit, notifications: $notifications, messages: $messages)';
   }
 
   @override
@@ -355,7 +378,8 @@ class _$UserModelImpl implements _UserModel {
             (identical(other.lastVisit, lastVisit) ||
                 other.lastVisit == lastVisit) &&
             const DeepCollectionEquality()
-                .equals(other._notifications, _notifications));
+                .equals(other._notifications, _notifications) &&
+            const DeepCollectionEquality().equals(other._messages, _messages));
   }
 
   @JsonKey(ignore: true)
@@ -374,7 +398,8 @@ class _$UserModelImpl implements _UserModel {
       const DeepCollectionEquality().hash(_bookmarkedPlaces),
       isOnline,
       lastVisit,
-      const DeepCollectionEquality().hash(_notifications));
+      const DeepCollectionEquality().hash(_notifications),
+      const DeepCollectionEquality().hash(_messages));
 
   @JsonKey(ignore: true)
   @override
@@ -404,7 +429,8 @@ abstract class _UserModel implements UserModel {
       required final List<PlaceModel> bookmarkedPlaces,
       required final bool isOnline,
       required final DateTime lastVisit,
-      required final List<NotificationModel> notifications}) = _$UserModelImpl;
+      required final List<NotificationModel> notifications,
+      required final List<MessageModel> messages}) = _$UserModelImpl;
 
   factory _UserModel.fromJson(Map<String, dynamic> json) =
       _$UserModelImpl.fromJson;
@@ -435,6 +461,8 @@ abstract class _UserModel implements UserModel {
   DateTime get lastVisit;
   @override
   List<NotificationModel> get notifications;
+  @override
+  List<MessageModel> get messages;
   @override
   @JsonKey(ignore: true)
   _$$UserModelImplCopyWith<_$UserModelImpl> get copyWith =>
