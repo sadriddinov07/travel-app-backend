@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:travel_app_backend/models/message_model/message_model.dart';
 import 'package:travel_app_backend/models/notification_model/notification_model.dart';
 import 'package:travel_app_backend/models/place_model/place_model.dart';
 
@@ -22,6 +23,7 @@ class UserModel with _$UserModel {
     required bool isOnline,
     required DateTime lastVisit,
     required List<NotificationModel> notifications,
+    required List<MessageModel> messages,
   }) = _UserModel;
 
   factory UserModel.fromJson(Map<String, Object?> json) =>
