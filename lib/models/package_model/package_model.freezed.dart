@@ -21,15 +21,23 @@ PackageModel _$PackageModelFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$PackageModel {
   String get id => throw _privateConstructorUsedError;
+
   String get name => throw _privateConstructorUsedError;
+
   String get city => throw _privateConstructorUsedError;
+
   String get country => throw _privateConstructorUsedError;
+
   double get price => throw _privateConstructorUsedError;
+
   List<UserModel> get bookedUsers => throw _privateConstructorUsedError;
+
   List<RatingModel> get ratings => throw _privateConstructorUsedError;
+
   DateTime get flyDate => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
   $PackageModelCopyWith<PackageModel> get copyWith =>
       throw _privateConstructorUsedError;
@@ -40,6 +48,7 @@ abstract class $PackageModelCopyWith<$Res> {
   factory $PackageModelCopyWith(
           PackageModel value, $Res Function(PackageModel) then) =
       _$PackageModelCopyWithImpl<$Res, PackageModel>;
+
   @useResult
   $Res call(
       {String id,
@@ -59,6 +68,7 @@ class _$PackageModelCopyWithImpl<$Res, $Val extends PackageModel>
 
   // ignore: unused_field
   final $Val _value;
+
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -117,6 +127,7 @@ abstract class _$$PackageModelImplCopyWith<$Res>
   factory _$$PackageModelImplCopyWith(
           _$PackageModelImpl value, $Res Function(_$PackageModelImpl) then) =
       __$$PackageModelImplCopyWithImpl<$Res>;
+
   @override
   @useResult
   $Res call(
@@ -217,6 +228,7 @@ class _$PackageModelImpl implements _PackageModel {
   @override
   final double price;
   final List<UserModel> _bookedUsers;
+
   @override
   List<UserModel> get bookedUsers {
     if (_bookedUsers is EqualUnmodifiableListView) return _bookedUsers;
@@ -225,6 +237,7 @@ class _$PackageModelImpl implements _PackageModel {
   }
 
   final List<RatingModel> _ratings;
+
   @override
   List<RatingModel> get ratings {
     if (_ratings is EqualUnmodifiableListView) return _ratings;
@@ -299,20 +312,28 @@ abstract class _PackageModel implements PackageModel {
 
   @override
   String get id;
+
   @override
   String get name;
+
   @override
   String get city;
+
   @override
   String get country;
+
   @override
   double get price;
+
   @override
   List<UserModel> get bookedUsers;
+
   @override
   List<RatingModel> get ratings;
+
   @override
   DateTime get flyDate;
+
   @override
   @JsonKey(ignore: true)
   _$$PackageModelImplCopyWith<_$PackageModelImpl> get copyWith =>

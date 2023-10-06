@@ -21,12 +21,17 @@ NotificationModel _$NotificationModelFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$NotificationModel {
   String get id => throw _privateConstructorUsedError;
+
   AssistantModel get assistantModel => throw _privateConstructorUsedError;
+
   String get title => throw _privateConstructorUsedError;
+
   String get content => throw _privateConstructorUsedError;
+
   DateTime get createdAt => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
   $NotificationModelCopyWith<NotificationModel> get copyWith =>
       throw _privateConstructorUsedError;
@@ -37,6 +42,7 @@ abstract class $NotificationModelCopyWith<$Res> {
   factory $NotificationModelCopyWith(
           NotificationModel value, $Res Function(NotificationModel) then) =
       _$NotificationModelCopyWithImpl<$Res, NotificationModel>;
+
   @useResult
   $Res call(
       {String id,
@@ -55,6 +61,7 @@ class _$NotificationModelCopyWithImpl<$Res, $Val extends NotificationModel>
 
   // ignore: unused_field
   final $Val _value;
+
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -106,6 +113,7 @@ abstract class _$$NotificationModelImplCopyWith<$Res>
   factory _$$NotificationModelImplCopyWith(_$NotificationModelImpl value,
           $Res Function(_$NotificationModelImpl) then) =
       __$$NotificationModelImplCopyWithImpl<$Res>;
+
   @override
   @useResult
   $Res call(
@@ -238,14 +246,19 @@ abstract class _NotificationModel implements NotificationModel {
 
   @override
   String get id;
+
   @override
   AssistantModel get assistantModel;
+
   @override
   String get title;
+
   @override
   String get content;
+
   @override
   DateTime get createdAt;
+
   @override
   @JsonKey(ignore: true)
   _$$NotificationModelImplCopyWith<_$NotificationModelImpl> get copyWith =>

@@ -21,21 +21,34 @@ UserModel _$UserModelFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$UserModel {
   String get id => throw _privateConstructorUsedError;
+
   String get firstName => throw _privateConstructorUsedError;
+
   String? get lastName => throw _privateConstructorUsedError;
+
   String get location => throw _privateConstructorUsedError;
+
   String get email => throw _privateConstructorUsedError;
+
   String get password => throw _privateConstructorUsedError;
+
   String? get phoneNumber => throw _privateConstructorUsedError;
+
   String get imageUrl => throw _privateConstructorUsedError;
+
   List<PlaceModel> get likedPlaces => throw _privateConstructorUsedError;
+
   List<PlaceModel> get bookmarkedPlaces => throw _privateConstructorUsedError;
+
   bool get isOnline => throw _privateConstructorUsedError;
+
   DateTime get lastVisit => throw _privateConstructorUsedError;
+
   List<NotificationModel> get notifications =>
       throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
   $UserModelCopyWith<UserModel> get copyWith =>
       throw _privateConstructorUsedError;
@@ -45,6 +58,7 @@ mixin _$UserModel {
 abstract class $UserModelCopyWith<$Res> {
   factory $UserModelCopyWith(UserModel value, $Res Function(UserModel) then) =
       _$UserModelCopyWithImpl<$Res, UserModel>;
+
   @useResult
   $Res call(
       {String id,
@@ -69,6 +83,7 @@ class _$UserModelCopyWithImpl<$Res, $Val extends UserModel>
 
   // ignore: unused_field
   final $Val _value;
+
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -152,6 +167,7 @@ abstract class _$$UserModelImplCopyWith<$Res>
   factory _$$UserModelImplCopyWith(
           _$UserModelImpl value, $Res Function(_$UserModelImpl) then) =
       __$$UserModelImplCopyWithImpl<$Res>;
+
   @override
   @useResult
   $Res call(
@@ -294,6 +310,7 @@ class _$UserModelImpl implements _UserModel {
   @override
   final String imageUrl;
   final List<PlaceModel> _likedPlaces;
+
   @override
   List<PlaceModel> get likedPlaces {
     if (_likedPlaces is EqualUnmodifiableListView) return _likedPlaces;
@@ -302,6 +319,7 @@ class _$UserModelImpl implements _UserModel {
   }
 
   final List<PlaceModel> _bookmarkedPlaces;
+
   @override
   List<PlaceModel> get bookmarkedPlaces {
     if (_bookmarkedPlaces is EqualUnmodifiableListView)
@@ -315,6 +333,7 @@ class _$UserModelImpl implements _UserModel {
   @override
   final DateTime lastVisit;
   final List<NotificationModel> _notifications;
+
   @override
   List<NotificationModel> get notifications {
     if (_notifications is EqualUnmodifiableListView) return _notifications;
@@ -411,30 +430,43 @@ abstract class _UserModel implements UserModel {
 
   @override
   String get id;
+
   @override
   String get firstName;
+
   @override
   String? get lastName;
+
   @override
   String get location;
+
   @override
   String get email;
+
   @override
   String get password;
+
   @override
   String? get phoneNumber;
+
   @override
   String get imageUrl;
+
   @override
   List<PlaceModel> get likedPlaces;
+
   @override
   List<PlaceModel> get bookmarkedPlaces;
+
   @override
   bool get isOnline;
+
   @override
   DateTime get lastVisit;
+
   @override
   List<NotificationModel> get notifications;
+
   @override
   @JsonKey(ignore: true)
   _$$UserModelImplCopyWith<_$UserModelImpl> get copyWith =>
