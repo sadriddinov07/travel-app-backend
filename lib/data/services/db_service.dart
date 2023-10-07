@@ -134,12 +134,12 @@ sealed class DBService {
         email: email,
         password: password,
         imageUrl: null,
-        likedPlaces: [],
-        bookmarkedPlaces: [],
+        likedPlaces: null,
+        bookmarkedPlaces: null,
         isOnline: isOnline,
         lastVisit: lastVisit,
-        notifications: [],
-        messages: [],
+        notifications: null,
+        messages: null,
       );
 
       await child.set(post.toJson());
