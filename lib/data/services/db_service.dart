@@ -5,13 +5,14 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:travel_app_backend/data/services/storage_service.dart';
 import 'package:travel_app_backend/domain/models/assistant_model/assistant_model.dart';
+import 'package:travel_app_backend/domain/models/message_model/message_model.dart';
 import 'package:travel_app_backend/domain/models/place_model/place_model.dart';
 import 'package:travel_app_backend/domain/models/user_model/user_model.dart';
 
 sealed class DBService {
   static final db = FirebaseDatabase.instance;
 
-////////////////////////Place///////////////////////////////////////////////////
+  /// Place
   static Future<bool> storePlace(
     String name,
     String city,
@@ -50,7 +51,7 @@ sealed class DBService {
 
       return true;
     } catch (e) {
-      debugPrint("DB ERROR: $e");
+      debugPrint("DB ERROR (Place): $e");
       return false;
     }
   }
@@ -71,11 +72,12 @@ sealed class DBService {
       await fbPost.remove();
       return true;
     } catch (e) {
+      debugPrint("DB ERROR (Place): $e");
       return false;
     }
   }
 
-  ////////////////////////User///////////////////////////////////////////////////
+  /// User
   static Future<bool> storeUser(
     String firstName,
     String location,
@@ -112,8 +114,7 @@ sealed class DBService {
 
       return true;
     } catch (e) {
-      debugPrint(
-          "DB ERROR:______________________________$e __________________________");
+      debugPrint("DB ERROR (User): $e");
       return false;
     }
   }
@@ -134,11 +135,12 @@ sealed class DBService {
       await fbPost.remove();
       return true;
     } catch (e) {
+      debugPrint("DB ERROR (User): $e");
       return false;
     }
   }
 
-  ////////////////////////Assistant///////////////////////////////////////////////////
+  /// Assistant
   static Future<bool> storeAssistant(
     String firstName,
     String lastName,
@@ -174,8 +176,7 @@ sealed class DBService {
       await child.set(post.toJson());
       return true;
     } catch (e) {
-      debugPrint(
-          "DB ERROR:--------------------- $e ----------------------------");
+      debugPrint("DB ERROR (Assistant): $e");
       return false;
     }
   }
@@ -196,6 +197,36 @@ sealed class DBService {
       await fbPost.remove();
       return true;
     } catch (e) {
+      debugPrint("DB ERROR (Assistant): $e");
+      return false;
+    }
+  }
+
+  static Future<bool> sendMessage(
+    UserModel fromUser,
+    UserModel toUser,
+    String content,
+    MessageType messageType,
+  ) async {
+    try {
+      final folder = db.ref(Folder.user).child(toUser.id);
+      final id = folder.push().key!;
+
+      final message = MessageModel(
+        fromUser: fromUser,
+        toUser: toUser,
+        id: id,
+        content: content,
+        createdTime: DateTime.now(),
+        isSeen: false,
+        messageType: messageType,
+      );
+      folder.update({
+        "messages": [...fromUser.messages, message],
+      });
+      return true;
+    } catch (e) {
+      debugPrint("DB ERROR (Message): $e");
       return false;
     }
   }
@@ -204,7 +235,8 @@ sealed class DBService {
 sealed class Folder {
   /// Firebase Database folder
   static const assistant = "Assistant";
-  static const message = "Message";
+
+  // static const message = "Message";
   static const notification = "Notification";
   static const place = "Place";
   static const rating = "Rating";
