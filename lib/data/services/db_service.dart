@@ -27,22 +27,27 @@ sealed class DBService {
       final child = folder.push();
       final id = child.key!;
       List<String> imagesUrl = [];
+
       for (final item in file) {
-        // imagesUrl.add(await StoreService.placeUploadFile(item));
+        imagesUrl.add(await StoreService.uploadFile(item, Folder.placeImages));
       }
+
       final post = PlaceModel(
-          id: id,
-          name: name,
-          city: city,
-          country: country,
-          description: description,
-          price: price,
-          assistantModel: assistantModel,
-          ratings: [],
-          bookedUsers: [],
-          flyDate: flyDate,
-          placeImagesUrls: imagesUrl);
+        id: id,
+        name: name,
+        city: city,
+        country: country,
+        description: description,
+        price: price,
+        assistantModel: assistantModel,
+        ratings: [],
+        bookedUsers: [],
+        flyDate: flyDate,
+        placeImagesUrls: imagesUrl,
+      );
+
       await child.set(post.toJson());
+
       return true;
     } catch (e) {
       debugPrint("DB ERROR: $e");
@@ -85,21 +90,26 @@ sealed class DBService {
       final child = folder.push();
       final id = child.key!;
 
+      final String imageUrl =
+          await StoreService.uploadFile(file, Folder.userImages);
 
       final post = UserModel(
-          id: id,
-          firstName: firstName,
-          location: location,
-          email: email,
-          password: password,
-          imageUrl: 'imageUrl',
-          likedPlaces: [],
-          bookmarkedPlaces: [],
-          isOnline: isOnline,
-          lastVisit: lastVisit,
-          notifications: [],
-          messages: []);
+        id: id,
+        firstName: firstName,
+        location: location,
+        email: email,
+        password: password,
+        imageUrl: imageUrl,
+        likedPlaces: [],
+        bookmarkedPlaces: [],
+        isOnline: isOnline,
+        lastVisit: lastVisit,
+        notifications: [],
+        messages: [],
+      );
+
       await child.set(post.toJson());
+
       return true;
     } catch (e) {
       debugPrint(
@@ -145,21 +155,27 @@ sealed class DBService {
       final child = folder.push();
       final id = child.key!;
 
-      // final imageUrl = (await StoreService.assistantUploadFile(file));
+      final String imageUrl =
+          await StoreService.uploadFile(file, Folder.assistantImages);
 
       final post = AssistantModel(
-          id: id,
-          firstName: firstName,
-          lastName: lastName,
-          location: location,
-          email: email,
-          password: password,
-          phoneNumber: phoneNumber,
-          imageUrl: 'imageUrl', isOnline: isOnline, lastVisit: lastVisit);
+        id: id,
+        firstName: firstName,
+        lastName: lastName,
+        location: location,
+        email: email,
+        password: password,
+        phoneNumber: phoneNumber,
+        imageUrl: imageUrl,
+        isOnline: isOnline,
+        lastVisit: lastVisit,
+      );
+
       await child.set(post.toJson());
       return true;
     } catch (e) {
-      debugPrint("DB ERROR:--------------------- $e ----------------------------");
+      debugPrint(
+          "DB ERROR:--------------------- $e ----------------------------");
       return false;
     }
   }
