@@ -118,15 +118,14 @@ sealed class DBService {
     String password,
     bool isOnline,
     DateTime lastVisit,
-    File file,
+
   ) async {
     try {
       final folder = db.ref(Folder.user);
       final child = folder.push();
       final id = child.key!;
 
-      final String imageUrl =
-          await StoreService.uploadFile(file, Folder.userImages);
+
 
       final post = UserModel(
         id: id,
@@ -134,7 +133,7 @@ sealed class DBService {
         location: location,
         email: email,
         password: password,
-        imageUrl: imageUrl,
+        imageUrl: null,
         likedPlaces: [],
         bookmarkedPlaces: [],
         isOnline: isOnline,
@@ -203,6 +202,7 @@ sealed class DBService {
   }
 
   ////////////////////////Assistant///////////////////////////////////////////////////
+  ///Create Assistant
   static Future<bool> storeAssistant(
     String firstName,
     String lastName,
@@ -243,7 +243,7 @@ sealed class DBService {
       return false;
     }
   }
-
+/// Read All Assistant
   static Future<List<AssistantModel>> readAllAssistant() async {
     final folder = db.ref(Folder.assistant);
     final data = await folder.get();
@@ -253,7 +253,7 @@ sealed class DBService {
         .map((e) => AssistantModel.fromJson(e as Map<String, Object?>))
         .toList();
   }
-
+/// Delete Assistant
   static Future<bool> deleteAssistant(String postId) async {
     try {
       final fbPost = db.ref(Folder.assistant).child(postId);
@@ -263,7 +263,7 @@ sealed class DBService {
       return false;
     }
   }
-
+///Update Assistant
   static Future<bool> updateAssistant(
     String id,
     String firstName,

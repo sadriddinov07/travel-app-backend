@@ -27,7 +27,7 @@ mixin _$UserModel {
   String get email => throw _privateConstructorUsedError;
   String get password => throw _privateConstructorUsedError;
   String? get phoneNumber => throw _privateConstructorUsedError;
-  String get imageUrl => throw _privateConstructorUsedError;
+  String? get imageUrl => throw _privateConstructorUsedError;
   List<PlaceModel>? get likedPlaces => throw _privateConstructorUsedError;
   List<PlaceModel>? get bookmarkedPlaces => throw _privateConstructorUsedError;
   bool get isOnline => throw _privateConstructorUsedError;
@@ -55,7 +55,7 @@ abstract class $UserModelCopyWith<$Res> {
       String email,
       String password,
       String? phoneNumber,
-      String imageUrl,
+      String? imageUrl,
       List<PlaceModel>? likedPlaces,
       List<PlaceModel>? bookmarkedPlaces,
       bool isOnline,
@@ -84,7 +84,7 @@ class _$UserModelCopyWithImpl<$Res, $Val extends UserModel>
     Object? email = null,
     Object? password = null,
     Object? phoneNumber = freezed,
-    Object? imageUrl = null,
+    Object? imageUrl = freezed,
     Object? likedPlaces = freezed,
     Object? bookmarkedPlaces = freezed,
     Object? isOnline = null,
@@ -121,10 +121,10 @@ class _$UserModelCopyWithImpl<$Res, $Val extends UserModel>
           ? _value.phoneNumber
           : phoneNumber // ignore: cast_nullable_to_non_nullable
               as String?,
-      imageUrl: null == imageUrl
+      imageUrl: freezed == imageUrl
           ? _value.imageUrl
           : imageUrl // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       likedPlaces: freezed == likedPlaces
           ? _value.likedPlaces
           : likedPlaces // ignore: cast_nullable_to_non_nullable
@@ -169,7 +169,7 @@ abstract class _$$UserModelImplCopyWith<$Res>
       String email,
       String password,
       String? phoneNumber,
-      String imageUrl,
+      String? imageUrl,
       List<PlaceModel>? likedPlaces,
       List<PlaceModel>? bookmarkedPlaces,
       bool isOnline,
@@ -196,7 +196,7 @@ class __$$UserModelImplCopyWithImpl<$Res>
     Object? email = null,
     Object? password = null,
     Object? phoneNumber = freezed,
-    Object? imageUrl = null,
+    Object? imageUrl = freezed,
     Object? likedPlaces = freezed,
     Object? bookmarkedPlaces = freezed,
     Object? isOnline = null,
@@ -233,10 +233,10 @@ class __$$UserModelImplCopyWithImpl<$Res>
           ? _value.phoneNumber
           : phoneNumber // ignore: cast_nullable_to_non_nullable
               as String?,
-      imageUrl: null == imageUrl
+      imageUrl: freezed == imageUrl
           ? _value.imageUrl
           : imageUrl // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       likedPlaces: freezed == likedPlaces
           ? _value._likedPlaces
           : likedPlaces // ignore: cast_nullable_to_non_nullable
@@ -277,7 +277,7 @@ class _$UserModelImpl implements _UserModel {
       required this.email,
       required this.password,
       this.phoneNumber,
-      required this.imageUrl,
+      this.imageUrl,
       required final List<PlaceModel>? likedPlaces,
       required final List<PlaceModel>? bookmarkedPlaces,
       required this.isOnline,
@@ -307,7 +307,7 @@ class _$UserModelImpl implements _UserModel {
   @override
   final String? phoneNumber;
   @override
-  final String imageUrl;
+  final String? imageUrl;
   final List<PlaceModel>? _likedPlaces;
   @override
   List<PlaceModel>? get likedPlaces {
@@ -432,7 +432,7 @@ abstract class _UserModel implements UserModel {
       required final String email,
       required final String password,
       final String? phoneNumber,
-      required final String imageUrl,
+      final String? imageUrl,
       required final List<PlaceModel>? likedPlaces,
       required final List<PlaceModel>? bookmarkedPlaces,
       required final bool isOnline,
@@ -458,7 +458,7 @@ abstract class _UserModel implements UserModel {
   @override
   String? get phoneNumber;
   @override
-  String get imageUrl;
+  String? get imageUrl;
   @override
   List<PlaceModel>? get likedPlaces;
   @override

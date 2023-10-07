@@ -15,7 +15,7 @@ _$UserModelImpl _$$UserModelImplFromJson(Map<String, dynamic> json) =>
       email: json['email'] as String,
       password: json['password'] as String,
       phoneNumber: json['phoneNumber'] as String?,
-      imageUrl: json['imageUrl'] as String,
+      imageUrl: json['imageUrl'] as String?,
       likedPlaces: (json['likedPlaces'] as List<dynamic>?)
           ?.map((e) => PlaceModel.fromJson(e as Map<String, dynamic>))
           .toList(),

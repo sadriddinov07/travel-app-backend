@@ -17,7 +17,7 @@ class UserModel with _$UserModel {
     required String email,
     required String password,
     String? phoneNumber,
-    required String imageUrl,
+     String? imageUrl,
     required List<PlaceModel>? likedPlaces,
     required List<PlaceModel>? bookmarkedPlaces,
     required bool isOnline,
