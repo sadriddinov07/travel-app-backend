@@ -203,6 +203,7 @@ sealed class DBService {
     }
   }
 
+  /// Message
   static Future<bool> sendMessage(
     UserModel fromUser,
     UserModel toUser,
