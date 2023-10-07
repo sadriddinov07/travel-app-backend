@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:travel_app_backend/data/services/db_service.dart';
 import 'package:travel_app_backend/presentation/pages/dashboard_page.dart';
 
 class AddModelPage extends StatefulWidget {
@@ -18,7 +17,6 @@ class _AddModelPageState extends State<AddModelPage> {
   void getPhoto() async {
     final XFile? file =
         await imagePicker.pickImage(source: ImageSource.gallery);
-
   }
 
   @override
