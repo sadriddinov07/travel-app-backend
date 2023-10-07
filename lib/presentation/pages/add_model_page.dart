@@ -1,11 +1,27 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
-import 'package:travel_app_backend/data/services/db_service.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:travel_app_backend/presentation/pages/dashboard_page.dart';
 
-class AddModelPage extends StatelessWidget {
+class AddModelPage extends StatefulWidget {
   final Model model;
 
   const AddModelPage({super.key, required this.model});
+
+  @override
+  State<AddModelPage> createState() => _AddModelPageState();
+}
+
+class _AddModelPageState extends State<AddModelPage> {
+  final ImagePicker picker = ImagePicker();
+  File? file;
+
+  void getImage() async {
+    final xFile = await picker.pickImage(source: ImageSource.gallery);
+    file = xFile != null ? File(xFile.path) : null;
+    setState(() {});
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +30,7 @@ class AddModelPage extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 10),
         child: Column(
           children: [
-            if (model == Model.assistant)
+            if (widget.model == Model.assistant)
               TextField(
                 textInputAction: TextInputAction.next,
                 decoration: InputDecoration(
@@ -66,7 +82,7 @@ class AddModelPage extends StatelessWidget {
                 ),
               ),
             ),
-            if (model == Model.place)
+            if (widget.model == Model.place)
               TextField(
                 textInputAction: TextInputAction.next,
                 decoration: InputDecoration(
@@ -110,6 +126,25 @@ class AddModelPage extends StatelessWidget {
             ),
 
             /// TODO: File
+            SizedBox(height: 20),
+            GestureDetector(
+              onTap: getImage,
+              child: Card(
+                child: SizedBox(
+                  height: MediaQuery.sizeOf(context).width - 40,
+                  width: MediaQuery.sizeOf(context).width,
+                  child: file == null
+                      ? const Icon(
+                          Icons.add,
+                          size: 175,
+                        )
+                      : Image.file(
+                          file!,
+                          fit: BoxFit.cover,
+                        ),
+                ),
+              ),
+            ),
             SizedBox(height: 20),
             GestureDetector(
               onTap: () {},
