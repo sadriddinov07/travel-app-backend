@@ -16,8 +16,8 @@ class PlaceModel with _$PlaceModel {
     required String description,
     required double price,
     required AssistantModel assistantModel,
-    required List<RatingModel> ratings,
-    required List<UserModel> bookedUsers,
+    required List<RatingModel>? ratings,
+    required List<UserModel>? bookedUsers,
     required DateTime flyDate,
     required List<String> placeImagesUrls,
   }) = _PlaceModel;

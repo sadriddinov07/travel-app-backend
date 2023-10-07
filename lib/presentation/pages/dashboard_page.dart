@@ -16,8 +16,8 @@ class DashboardPage extends StatelessWidget {
             destinations: [
               NavigationRailDestination(
                 icon: Icon(
-                  Icons.circle,
-                  color: Colors.white,
+                  Icons.person,
+                  color: Colors.black,
                 ),
                 label: Text('User'),
               ),
