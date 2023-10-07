@@ -28,8 +28,8 @@ class _DashboardPageState extends State<DashboardPage> {
             destinations: [
               NavigationRailDestination(
                 icon: Icon(
-                  Icons.circle,
-                  color: Colors.white,
+                  Icons.person,
+                  color: Colors.black,
                 ),
                 label: Text('User'),
               ),

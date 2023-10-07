@@ -16,11 +16,11 @@ _$PlaceModelImpl _$$PlaceModelImplFromJson(Map<String, dynamic> json) =>
       price: (json['price'] as num).toDouble(),
       assistantModel: AssistantModel.fromJson(
           json['assistantModel'] as Map<String, dynamic>),
-      ratings: (json['ratings'] as List<dynamic>)
-          .map((e) => RatingModel.fromJson(e as Map<String, dynamic>))
+      ratings: (json['ratings'] as List<dynamic>?)
+          ?.map((e) => RatingModel.fromJson(e as Map<String, dynamic>))
           .toList(),
-      bookedUsers: (json['bookedUsers'] as List<dynamic>)
-          .map((e) => UserModel.fromJson(e as Map<String, dynamic>))
+      bookedUsers: (json['bookedUsers'] as List<dynamic>?)
+          ?.map((e) => UserModel.fromJson(e as Map<String, dynamic>))
           .toList(),
       flyDate: DateTime.parse(json['flyDate'] as String),
       placeImagesUrls: (json['placeImagesUrls'] as List<dynamic>)

@@ -21,29 +21,18 @@ PlaceModel _$PlaceModelFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$PlaceModel {
   String get id => throw _privateConstructorUsedError;
-
   String get name => throw _privateConstructorUsedError;
-
   String get city => throw _privateConstructorUsedError;
-
   String get country => throw _privateConstructorUsedError;
-
   String get description => throw _privateConstructorUsedError;
-
   double get price => throw _privateConstructorUsedError;
-
   AssistantModel get assistantModel => throw _privateConstructorUsedError;
-
-  List<RatingModel> get ratings => throw _privateConstructorUsedError;
-
-  List<UserModel> get bookedUsers => throw _privateConstructorUsedError;
-
+  List<RatingModel>? get ratings => throw _privateConstructorUsedError;
+  List<UserModel>? get bookedUsers => throw _privateConstructorUsedError;
   DateTime get flyDate => throw _privateConstructorUsedError;
-
   List<String> get placeImagesUrls => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   $PlaceModelCopyWith<PlaceModel> get copyWith =>
       throw _privateConstructorUsedError;
@@ -54,7 +43,6 @@ abstract class $PlaceModelCopyWith<$Res> {
   factory $PlaceModelCopyWith(
           PlaceModel value, $Res Function(PlaceModel) then) =
       _$PlaceModelCopyWithImpl<$Res, PlaceModel>;
-
   @useResult
   $Res call(
       {String id,
@@ -64,8 +52,8 @@ abstract class $PlaceModelCopyWith<$Res> {
       String description,
       double price,
       AssistantModel assistantModel,
-      List<RatingModel> ratings,
-      List<UserModel> bookedUsers,
+      List<RatingModel>? ratings,
+      List<UserModel>? bookedUsers,
       DateTime flyDate,
       List<String> placeImagesUrls});
 
@@ -79,7 +67,6 @@ class _$PlaceModelCopyWithImpl<$Res, $Val extends PlaceModel>
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -93,8 +80,8 @@ class _$PlaceModelCopyWithImpl<$Res, $Val extends PlaceModel>
     Object? description = null,
     Object? price = null,
     Object? assistantModel = null,
-    Object? ratings = null,
-    Object? bookedUsers = null,
+    Object? ratings = freezed,
+    Object? bookedUsers = freezed,
     Object? flyDate = null,
     Object? placeImagesUrls = null,
   }) {
@@ -127,14 +114,14 @@ class _$PlaceModelCopyWithImpl<$Res, $Val extends PlaceModel>
           ? _value.assistantModel
           : assistantModel // ignore: cast_nullable_to_non_nullable
               as AssistantModel,
-      ratings: null == ratings
+      ratings: freezed == ratings
           ? _value.ratings
           : ratings // ignore: cast_nullable_to_non_nullable
-              as List<RatingModel>,
-      bookedUsers: null == bookedUsers
+              as List<RatingModel>?,
+      bookedUsers: freezed == bookedUsers
           ? _value.bookedUsers
           : bookedUsers // ignore: cast_nullable_to_non_nullable
-              as List<UserModel>,
+              as List<UserModel>?,
       flyDate: null == flyDate
           ? _value.flyDate
           : flyDate // ignore: cast_nullable_to_non_nullable
@@ -161,7 +148,6 @@ abstract class _$$PlaceModelImplCopyWith<$Res>
   factory _$$PlaceModelImplCopyWith(
           _$PlaceModelImpl value, $Res Function(_$PlaceModelImpl) then) =
       __$$PlaceModelImplCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call(
@@ -172,8 +158,8 @@ abstract class _$$PlaceModelImplCopyWith<$Res>
       String description,
       double price,
       AssistantModel assistantModel,
-      List<RatingModel> ratings,
-      List<UserModel> bookedUsers,
+      List<RatingModel>? ratings,
+      List<UserModel>? bookedUsers,
       DateTime flyDate,
       List<String> placeImagesUrls});
 
@@ -199,8 +185,8 @@ class __$$PlaceModelImplCopyWithImpl<$Res>
     Object? description = null,
     Object? price = null,
     Object? assistantModel = null,
-    Object? ratings = null,
-    Object? bookedUsers = null,
+    Object? ratings = freezed,
+    Object? bookedUsers = freezed,
     Object? flyDate = null,
     Object? placeImagesUrls = null,
   }) {
@@ -233,14 +219,14 @@ class __$$PlaceModelImplCopyWithImpl<$Res>
           ? _value.assistantModel
           : assistantModel // ignore: cast_nullable_to_non_nullable
               as AssistantModel,
-      ratings: null == ratings
+      ratings: freezed == ratings
           ? _value._ratings
           : ratings // ignore: cast_nullable_to_non_nullable
-              as List<RatingModel>,
-      bookedUsers: null == bookedUsers
+              as List<RatingModel>?,
+      bookedUsers: freezed == bookedUsers
           ? _value._bookedUsers
           : bookedUsers // ignore: cast_nullable_to_non_nullable
-              as List<UserModel>,
+              as List<UserModel>?,
       flyDate: null == flyDate
           ? _value.flyDate
           : flyDate // ignore: cast_nullable_to_non_nullable
@@ -264,8 +250,8 @@ class _$PlaceModelImpl implements _PlaceModel {
       required this.description,
       required this.price,
       required this.assistantModel,
-      required final List<RatingModel> ratings,
-      required final List<UserModel> bookedUsers,
+      required final List<RatingModel>? ratings,
+      required final List<UserModel>? bookedUsers,
       required this.flyDate,
       required final List<String> placeImagesUrls})
       : _ratings = ratings,
@@ -289,28 +275,29 @@ class _$PlaceModelImpl implements _PlaceModel {
   final double price;
   @override
   final AssistantModel assistantModel;
-  final List<RatingModel> _ratings;
-
+  final List<RatingModel>? _ratings;
   @override
-  List<RatingModel> get ratings {
+  List<RatingModel>? get ratings {
+    final value = _ratings;
+    if (value == null) return null;
     if (_ratings is EqualUnmodifiableListView) return _ratings;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_ratings);
+    return EqualUnmodifiableListView(value);
   }
 
-  final List<UserModel> _bookedUsers;
-
+  final List<UserModel>? _bookedUsers;
   @override
-  List<UserModel> get bookedUsers {
+  List<UserModel>? get bookedUsers {
+    final value = _bookedUsers;
+    if (value == null) return null;
     if (_bookedUsers is EqualUnmodifiableListView) return _bookedUsers;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_bookedUsers);
+    return EqualUnmodifiableListView(value);
   }
 
   @override
   final DateTime flyDate;
   final List<String> _placeImagesUrls;
-
   @override
   List<String> get placeImagesUrls {
     if (_placeImagesUrls is EqualUnmodifiableListView) return _placeImagesUrls;
@@ -384,8 +371,8 @@ abstract class _PlaceModel implements PlaceModel {
       required final String description,
       required final double price,
       required final AssistantModel assistantModel,
-      required final List<RatingModel> ratings,
-      required final List<UserModel> bookedUsers,
+      required final List<RatingModel>? ratings,
+      required final List<UserModel>? bookedUsers,
       required final DateTime flyDate,
       required final List<String> placeImagesUrls}) = _$PlaceModelImpl;
 
@@ -394,37 +381,26 @@ abstract class _PlaceModel implements PlaceModel {
 
   @override
   String get id;
-
   @override
   String get name;
-
   @override
   String get city;
-
   @override
   String get country;
-
   @override
   String get description;
-
   @override
   double get price;
-
   @override
   AssistantModel get assistantModel;
-
   @override
-  List<RatingModel> get ratings;
-
+  List<RatingModel>? get ratings;
   @override
-  List<UserModel> get bookedUsers;
-
+  List<UserModel>? get bookedUsers;
   @override
   DateTime get flyDate;
-
   @override
   List<String> get placeImagesUrls;
-
   @override
   @JsonKey(ignore: true)
   _$$PlaceModelImplCopyWith<_$PlaceModelImpl> get copyWith =>

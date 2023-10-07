@@ -21,27 +21,18 @@ AssistantModel _$AssistantModelFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$AssistantModel {
   String get id => throw _privateConstructorUsedError;
-
   String get firstName => throw _privateConstructorUsedError;
-
   String get lastName => throw _privateConstructorUsedError;
-
   String get location => throw _privateConstructorUsedError;
-
   String get email => throw _privateConstructorUsedError;
-
   String get password => throw _privateConstructorUsedError;
-
   String get phoneNumber => throw _privateConstructorUsedError;
-
   String get imageUrl => throw _privateConstructorUsedError;
-
   bool get isOnline => throw _privateConstructorUsedError;
-
   DateTime get lastVisit => throw _privateConstructorUsedError;
+  List<MessageModel> get messages => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   $AssistantModelCopyWith<AssistantModel> get copyWith =>
       throw _privateConstructorUsedError;
@@ -52,7 +43,6 @@ abstract class $AssistantModelCopyWith<$Res> {
   factory $AssistantModelCopyWith(
           AssistantModel value, $Res Function(AssistantModel) then) =
       _$AssistantModelCopyWithImpl<$Res, AssistantModel>;
-
   @useResult
   $Res call(
       {String id,
@@ -64,7 +54,8 @@ abstract class $AssistantModelCopyWith<$Res> {
       String phoneNumber,
       String imageUrl,
       bool isOnline,
-      DateTime lastVisit});
+      DateTime lastVisit,
+      List<MessageModel> messages});
 }
 
 /// @nodoc
@@ -74,7 +65,6 @@ class _$AssistantModelCopyWithImpl<$Res, $Val extends AssistantModel>
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -91,6 +81,7 @@ class _$AssistantModelCopyWithImpl<$Res, $Val extends AssistantModel>
     Object? imageUrl = null,
     Object? isOnline = null,
     Object? lastVisit = null,
+    Object? messages = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -133,6 +124,10 @@ class _$AssistantModelCopyWithImpl<$Res, $Val extends AssistantModel>
           ? _value.lastVisit
           : lastVisit // ignore: cast_nullable_to_non_nullable
               as DateTime,
+      messages: null == messages
+          ? _value.messages
+          : messages // ignore: cast_nullable_to_non_nullable
+              as List<MessageModel>,
     ) as $Val);
   }
 }
@@ -143,7 +138,6 @@ abstract class _$$AssistantModelImplCopyWith<$Res>
   factory _$$AssistantModelImplCopyWith(_$AssistantModelImpl value,
           $Res Function(_$AssistantModelImpl) then) =
       __$$AssistantModelImplCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call(
@@ -156,7 +150,8 @@ abstract class _$$AssistantModelImplCopyWith<$Res>
       String phoneNumber,
       String imageUrl,
       bool isOnline,
-      DateTime lastVisit});
+      DateTime lastVisit,
+      List<MessageModel> messages});
 }
 
 /// @nodoc
@@ -180,6 +175,7 @@ class __$$AssistantModelImplCopyWithImpl<$Res>
     Object? imageUrl = null,
     Object? isOnline = null,
     Object? lastVisit = null,
+    Object? messages = null,
   }) {
     return _then(_$AssistantModelImpl(
       id: null == id
@@ -222,6 +218,10 @@ class __$$AssistantModelImplCopyWithImpl<$Res>
           ? _value.lastVisit
           : lastVisit // ignore: cast_nullable_to_non_nullable
               as DateTime,
+      messages: null == messages
+          ? _value._messages
+          : messages // ignore: cast_nullable_to_non_nullable
+              as List<MessageModel>,
     ));
   }
 }
@@ -240,7 +240,9 @@ class _$AssistantModelImpl implements _AssistantModel {
       required this.phoneNumber,
       required this.imageUrl,
       required this.isOnline,
-      required this.lastVisit});
+      required this.lastVisit,
+      required final List<MessageModel> messages})
+      : _messages = messages;
 
   factory _$AssistantModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$AssistantModelImplFromJson(json);
@@ -265,10 +267,17 @@ class _$AssistantModelImpl implements _AssistantModel {
   final bool isOnline;
   @override
   final DateTime lastVisit;
+  final List<MessageModel> _messages;
+  @override
+  List<MessageModel> get messages {
+    if (_messages is EqualUnmodifiableListView) return _messages;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_messages);
+  }
 
   @override
   String toString() {
-    return 'AssistantModel(id: $id, firstName: $firstName, lastName: $lastName, location: $location, email: $email, password: $password, phoneNumber: $phoneNumber, imageUrl: $imageUrl, isOnline: $isOnline, lastVisit: $lastVisit)';
+    return 'AssistantModel(id: $id, firstName: $firstName, lastName: $lastName, location: $location, email: $email, password: $password, phoneNumber: $phoneNumber, imageUrl: $imageUrl, isOnline: $isOnline, lastVisit: $lastVisit, messages: $messages)';
   }
 
   @override
@@ -293,13 +302,25 @@ class _$AssistantModelImpl implements _AssistantModel {
             (identical(other.isOnline, isOnline) ||
                 other.isOnline == isOnline) &&
             (identical(other.lastVisit, lastVisit) ||
-                other.lastVisit == lastVisit));
+                other.lastVisit == lastVisit) &&
+            const DeepCollectionEquality().equals(other._messages, _messages));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, firstName, lastName,
-      location, email, password, phoneNumber, imageUrl, isOnline, lastVisit);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      firstName,
+      lastName,
+      location,
+      email,
+      password,
+      phoneNumber,
+      imageUrl,
+      isOnline,
+      lastVisit,
+      const DeepCollectionEquality().hash(_messages));
 
   @JsonKey(ignore: true)
   @override
@@ -327,41 +348,34 @@ abstract class _AssistantModel implements AssistantModel {
       required final String phoneNumber,
       required final String imageUrl,
       required final bool isOnline,
-      required final DateTime lastVisit}) = _$AssistantModelImpl;
+      required final DateTime lastVisit,
+      required final List<MessageModel> messages}) = _$AssistantModelImpl;
 
   factory _AssistantModel.fromJson(Map<String, dynamic> json) =
       _$AssistantModelImpl.fromJson;
 
   @override
   String get id;
-
   @override
   String get firstName;
-
   @override
   String get lastName;
-
   @override
   String get location;
-
   @override
   String get email;
-
   @override
   String get password;
-
   @override
   String get phoneNumber;
-
   @override
   String get imageUrl;
-
   @override
   bool get isOnline;
-
   @override
   DateTime get lastVisit;
-
+  @override
+  List<MessageModel> get messages;
   @override
   @JsonKey(ignore: true)
   _$$AssistantModelImplCopyWith<_$AssistantModelImpl> get copyWith =>

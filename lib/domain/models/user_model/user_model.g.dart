@@ -15,7 +15,7 @@ _$UserModelImpl _$$UserModelImplFromJson(Map<String, dynamic> json) =>
       email: json['email'] as String,
       password: json['password'] as String,
       phoneNumber: json['phoneNumber'] as String?,
-      imageUrl: json['imageUrl'] as String,
+      imageUrl: json['imageUrl'] as String?,
       likedPlaces: (json['likedPlaces'] as List<dynamic>)
           .map((e) => PlaceModel.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -42,11 +42,11 @@ Map<String, dynamic> _$$UserModelImplToJson(_$UserModelImpl instance) =>
       'password': instance.password,
       'phoneNumber': instance.phoneNumber,
       'imageUrl': instance.imageUrl,
-      'likedPlaces': instance.likedPlaces.map((e) => e.toJson()).toList(),
+      'likedPlaces': instance.likedPlaces?.map((e) => e.toJson()).toList(),
       'bookmarkedPlaces':
-          instance.bookmarkedPlaces.map((e) => e.toJson()).toList(),
+          instance.bookmarkedPlaces?.map((e) => e.toJson()).toList(),
       'isOnline': instance.isOnline,
       'lastVisit': instance.lastVisit.toIso8601String(),
-      'notifications': instance.notifications.map((e) => e.toJson()).toList(),
-      'messages': instance.messages.map((e) => e.toJson()).toList(),
+      'notifications': instance.notifications?.map((e) => e.toJson()).toList(),
+      'messages': instance.messages?.map((e) => e.toJson()).toList(),
     };

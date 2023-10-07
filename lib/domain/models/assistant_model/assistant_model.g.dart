@@ -18,6 +18,9 @@ _$AssistantModelImpl _$$AssistantModelImplFromJson(Map<String, dynamic> json) =>
       imageUrl: json['imageUrl'] as String,
       isOnline: json['isOnline'] as bool,
       lastVisit: DateTime.parse(json['lastVisit'] as String),
+      messages: (json['messages'] as List<dynamic>)
+          .map((e) => MessageModel.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
 
 Map<String, dynamic> _$$AssistantModelImplToJson(
@@ -33,4 +36,5 @@ Map<String, dynamic> _$$AssistantModelImplToJson(
       'imageUrl': instance.imageUrl,
       'isOnline': instance.isOnline,
       'lastVisit': instance.lastVisit.toIso8601String(),
+      'messages': instance.messages.map((e) => e.toJson()).toList(),
     };

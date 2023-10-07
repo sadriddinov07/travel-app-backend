@@ -21,13 +21,10 @@ RatingModel _$RatingModelFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$RatingModel {
   String get id => throw _privateConstructorUsedError;
-
   UserModel get userModel => throw _privateConstructorUsedError;
-
   int get rating => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   $RatingModelCopyWith<RatingModel> get copyWith =>
       throw _privateConstructorUsedError;
@@ -38,7 +35,6 @@ abstract class $RatingModelCopyWith<$Res> {
   factory $RatingModelCopyWith(
           RatingModel value, $Res Function(RatingModel) then) =
       _$RatingModelCopyWithImpl<$Res, RatingModel>;
-
   @useResult
   $Res call({String id, UserModel userModel, int rating});
 
@@ -52,7 +48,6 @@ class _$RatingModelCopyWithImpl<$Res, $Val extends RatingModel>
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -94,7 +89,6 @@ abstract class _$$RatingModelImplCopyWith<$Res>
   factory _$$RatingModelImplCopyWith(
           _$RatingModelImpl value, $Res Function(_$RatingModelImpl) then) =
       __$$RatingModelImplCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call({String id, UserModel userModel, int rating});
@@ -197,13 +191,10 @@ abstract class _RatingModel implements RatingModel {
 
   @override
   String get id;
-
   @override
   UserModel get userModel;
-
   @override
   int get rating;
-
   @override
   @JsonKey(ignore: true)
   _$$RatingModelImplCopyWith<_$RatingModelImpl> get copyWith =>

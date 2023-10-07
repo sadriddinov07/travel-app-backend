@@ -4,6 +4,7 @@ import 'package:travel_app_backend/domain/models/notification_model/notification
 import 'package:travel_app_backend/domain/models/place_model/place_model.dart';
 
 part 'user_model.freezed.dart';
+
 part 'user_model.g.dart';
 
 @freezed
@@ -17,7 +18,7 @@ class UserModel with _$UserModel {
     required String email,
     required String password,
     String? phoneNumber,
-    required String imageUrl,
+    String? imageUrl,
     required List<PlaceModel> likedPlaces,
     required List<PlaceModel> bookmarkedPlaces,
     required bool isOnline,
