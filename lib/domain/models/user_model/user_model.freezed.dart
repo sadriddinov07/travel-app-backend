@@ -27,14 +27,14 @@ mixin _$UserModel {
   String get email => throw _privateConstructorUsedError;
   String get password => throw _privateConstructorUsedError;
   String? get phoneNumber => throw _privateConstructorUsedError;
-  String get imageUrl => throw _privateConstructorUsedError;
-  List<PlaceModel>? get likedPlaces => throw _privateConstructorUsedError;
-  List<PlaceModel>? get bookmarkedPlaces => throw _privateConstructorUsedError;
+  String? get imageUrl => throw _privateConstructorUsedError;
+  List<PlaceModel> get likedPlaces => throw _privateConstructorUsedError;
+  List<PlaceModel> get bookmarkedPlaces => throw _privateConstructorUsedError;
   bool get isOnline => throw _privateConstructorUsedError;
   DateTime get lastVisit => throw _privateConstructorUsedError;
-  List<NotificationModel>? get notifications =>
+  List<NotificationModel> get notifications =>
       throw _privateConstructorUsedError;
-  List<MessageModel>? get messages => throw _privateConstructorUsedError;
+  List<MessageModel> get messages => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -55,13 +55,13 @@ abstract class $UserModelCopyWith<$Res> {
       String email,
       String password,
       String? phoneNumber,
-      String imageUrl,
-      List<PlaceModel>? likedPlaces,
-      List<PlaceModel>? bookmarkedPlaces,
+      String? imageUrl,
+      List<PlaceModel> likedPlaces,
+      List<PlaceModel> bookmarkedPlaces,
       bool isOnline,
       DateTime lastVisit,
-      List<NotificationModel>? notifications,
-      List<MessageModel>? messages});
+      List<NotificationModel> notifications,
+      List<MessageModel> messages});
 }
 
 /// @nodoc
@@ -84,13 +84,13 @@ class _$UserModelCopyWithImpl<$Res, $Val extends UserModel>
     Object? email = null,
     Object? password = null,
     Object? phoneNumber = freezed,
-    Object? imageUrl = null,
-    Object? likedPlaces = freezed,
-    Object? bookmarkedPlaces = freezed,
+    Object? imageUrl = freezed,
+    Object? likedPlaces = null,
+    Object? bookmarkedPlaces = null,
     Object? isOnline = null,
     Object? lastVisit = null,
-    Object? notifications = freezed,
-    Object? messages = freezed,
+    Object? notifications = null,
+    Object? messages = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -121,18 +121,18 @@ class _$UserModelCopyWithImpl<$Res, $Val extends UserModel>
           ? _value.phoneNumber
           : phoneNumber // ignore: cast_nullable_to_non_nullable
               as String?,
-      imageUrl: null == imageUrl
+      imageUrl: freezed == imageUrl
           ? _value.imageUrl
           : imageUrl // ignore: cast_nullable_to_non_nullable
-              as String,
-      likedPlaces: freezed == likedPlaces
+              as String?,
+      likedPlaces: null == likedPlaces
           ? _value.likedPlaces
           : likedPlaces // ignore: cast_nullable_to_non_nullable
-              as List<PlaceModel>?,
-      bookmarkedPlaces: freezed == bookmarkedPlaces
+              as List<PlaceModel>,
+      bookmarkedPlaces: null == bookmarkedPlaces
           ? _value.bookmarkedPlaces
           : bookmarkedPlaces // ignore: cast_nullable_to_non_nullable
-              as List<PlaceModel>?,
+              as List<PlaceModel>,
       isOnline: null == isOnline
           ? _value.isOnline
           : isOnline // ignore: cast_nullable_to_non_nullable
@@ -141,14 +141,14 @@ class _$UserModelCopyWithImpl<$Res, $Val extends UserModel>
           ? _value.lastVisit
           : lastVisit // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      notifications: freezed == notifications
+      notifications: null == notifications
           ? _value.notifications
           : notifications // ignore: cast_nullable_to_non_nullable
-              as List<NotificationModel>?,
-      messages: freezed == messages
+              as List<NotificationModel>,
+      messages: null == messages
           ? _value.messages
           : messages // ignore: cast_nullable_to_non_nullable
-              as List<MessageModel>?,
+              as List<MessageModel>,
     ) as $Val);
   }
 }
@@ -169,13 +169,13 @@ abstract class _$$UserModelImplCopyWith<$Res>
       String email,
       String password,
       String? phoneNumber,
-      String imageUrl,
-      List<PlaceModel>? likedPlaces,
-      List<PlaceModel>? bookmarkedPlaces,
+      String? imageUrl,
+      List<PlaceModel> likedPlaces,
+      List<PlaceModel> bookmarkedPlaces,
       bool isOnline,
       DateTime lastVisit,
-      List<NotificationModel>? notifications,
-      List<MessageModel>? messages});
+      List<NotificationModel> notifications,
+      List<MessageModel> messages});
 }
 
 /// @nodoc
@@ -196,13 +196,13 @@ class __$$UserModelImplCopyWithImpl<$Res>
     Object? email = null,
     Object? password = null,
     Object? phoneNumber = freezed,
-    Object? imageUrl = null,
-    Object? likedPlaces = freezed,
-    Object? bookmarkedPlaces = freezed,
+    Object? imageUrl = freezed,
+    Object? likedPlaces = null,
+    Object? bookmarkedPlaces = null,
     Object? isOnline = null,
     Object? lastVisit = null,
-    Object? notifications = freezed,
-    Object? messages = freezed,
+    Object? notifications = null,
+    Object? messages = null,
   }) {
     return _then(_$UserModelImpl(
       id: null == id
@@ -233,18 +233,18 @@ class __$$UserModelImplCopyWithImpl<$Res>
           ? _value.phoneNumber
           : phoneNumber // ignore: cast_nullable_to_non_nullable
               as String?,
-      imageUrl: null == imageUrl
+      imageUrl: freezed == imageUrl
           ? _value.imageUrl
           : imageUrl // ignore: cast_nullable_to_non_nullable
-              as String,
-      likedPlaces: freezed == likedPlaces
+              as String?,
+      likedPlaces: null == likedPlaces
           ? _value._likedPlaces
           : likedPlaces // ignore: cast_nullable_to_non_nullable
-              as List<PlaceModel>?,
-      bookmarkedPlaces: freezed == bookmarkedPlaces
+              as List<PlaceModel>,
+      bookmarkedPlaces: null == bookmarkedPlaces
           ? _value._bookmarkedPlaces
           : bookmarkedPlaces // ignore: cast_nullable_to_non_nullable
-              as List<PlaceModel>?,
+              as List<PlaceModel>,
       isOnline: null == isOnline
           ? _value.isOnline
           : isOnline // ignore: cast_nullable_to_non_nullable
@@ -253,14 +253,14 @@ class __$$UserModelImplCopyWithImpl<$Res>
           ? _value.lastVisit
           : lastVisit // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      notifications: freezed == notifications
+      notifications: null == notifications
           ? _value._notifications
           : notifications // ignore: cast_nullable_to_non_nullable
-              as List<NotificationModel>?,
-      messages: freezed == messages
+              as List<NotificationModel>,
+      messages: null == messages
           ? _value._messages
           : messages // ignore: cast_nullable_to_non_nullable
-              as List<MessageModel>?,
+              as List<MessageModel>,
     ));
   }
 }
@@ -277,13 +277,13 @@ class _$UserModelImpl implements _UserModel {
       required this.email,
       required this.password,
       this.phoneNumber,
-      required this.imageUrl,
-      required final List<PlaceModel>? likedPlaces,
-      required final List<PlaceModel>? bookmarkedPlaces,
+      this.imageUrl,
+      required final List<PlaceModel> likedPlaces,
+      required final List<PlaceModel> bookmarkedPlaces,
       required this.isOnline,
       required this.lastVisit,
-      required final List<NotificationModel>? notifications,
-      required final List<MessageModel>? messages})
+      required final List<NotificationModel> notifications,
+      required final List<MessageModel> messages})
       : _likedPlaces = likedPlaces,
         _bookmarkedPlaces = bookmarkedPlaces,
         _notifications = notifications,
@@ -307,50 +307,42 @@ class _$UserModelImpl implements _UserModel {
   @override
   final String? phoneNumber;
   @override
-  final String imageUrl;
-  final List<PlaceModel>? _likedPlaces;
+  final String? imageUrl;
+  final List<PlaceModel> _likedPlaces;
   @override
-  List<PlaceModel>? get likedPlaces {
-    final value = _likedPlaces;
-    if (value == null) return null;
+  List<PlaceModel> get likedPlaces {
     if (_likedPlaces is EqualUnmodifiableListView) return _likedPlaces;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_likedPlaces);
   }
 
-  final List<PlaceModel>? _bookmarkedPlaces;
+  final List<PlaceModel> _bookmarkedPlaces;
   @override
-  List<PlaceModel>? get bookmarkedPlaces {
-    final value = _bookmarkedPlaces;
-    if (value == null) return null;
+  List<PlaceModel> get bookmarkedPlaces {
     if (_bookmarkedPlaces is EqualUnmodifiableListView)
       return _bookmarkedPlaces;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_bookmarkedPlaces);
   }
 
   @override
   final bool isOnline;
   @override
   final DateTime lastVisit;
-  final List<NotificationModel>? _notifications;
+  final List<NotificationModel> _notifications;
   @override
-  List<NotificationModel>? get notifications {
-    final value = _notifications;
-    if (value == null) return null;
+  List<NotificationModel> get notifications {
     if (_notifications is EqualUnmodifiableListView) return _notifications;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_notifications);
   }
 
-  final List<MessageModel>? _messages;
+  final List<MessageModel> _messages;
   @override
-  List<MessageModel>? get messages {
-    final value = _messages;
-    if (value == null) return null;
+  List<MessageModel> get messages {
     if (_messages is EqualUnmodifiableListView) return _messages;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_messages);
   }
 
   @override
@@ -432,13 +424,13 @@ abstract class _UserModel implements UserModel {
       required final String email,
       required final String password,
       final String? phoneNumber,
-      required final String imageUrl,
-      required final List<PlaceModel>? likedPlaces,
-      required final List<PlaceModel>? bookmarkedPlaces,
+      final String? imageUrl,
+      required final List<PlaceModel> likedPlaces,
+      required final List<PlaceModel> bookmarkedPlaces,
       required final bool isOnline,
       required final DateTime lastVisit,
-      required final List<NotificationModel>? notifications,
-      required final List<MessageModel>? messages}) = _$UserModelImpl;
+      required final List<NotificationModel> notifications,
+      required final List<MessageModel> messages}) = _$UserModelImpl;
 
   factory _UserModel.fromJson(Map<String, dynamic> json) =
       _$UserModelImpl.fromJson;
@@ -458,19 +450,19 @@ abstract class _UserModel implements UserModel {
   @override
   String? get phoneNumber;
   @override
-  String get imageUrl;
+  String? get imageUrl;
   @override
-  List<PlaceModel>? get likedPlaces;
+  List<PlaceModel> get likedPlaces;
   @override
-  List<PlaceModel>? get bookmarkedPlaces;
+  List<PlaceModel> get bookmarkedPlaces;
   @override
   bool get isOnline;
   @override
   DateTime get lastVisit;
   @override
-  List<NotificationModel>? get notifications;
+  List<NotificationModel> get notifications;
   @override
-  List<MessageModel>? get messages;
+  List<MessageModel> get messages;
   @override
   @JsonKey(ignore: true)
   _$$UserModelImplCopyWith<_$UserModelImpl> get copyWith =>
