@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:travel_app_backend/domain/models/message_model/message_model.dart';
 
 part 'assistant_model.freezed.dart';
 part 'assistant_model.g.dart';
@@ -17,6 +18,7 @@ class AssistantModel with _$AssistantModel {
     required String imageUrl,
     required bool isOnline,
     required DateTime lastVisit,
+    required List<MessageModel> messages,
   }) = _AssistantModel;
 
   factory AssistantModel.fromJson(Map<String, Object?> json) =>

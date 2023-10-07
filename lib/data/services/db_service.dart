@@ -171,6 +171,7 @@ sealed class DBService {
         imageUrl: imageUrl,
         isOnline: isOnline,
         lastVisit: lastVisit,
+        messages: [],
       );
 
       await child.set(post.toJson());

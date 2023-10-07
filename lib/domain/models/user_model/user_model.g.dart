@@ -16,19 +16,19 @@ _$UserModelImpl _$$UserModelImplFromJson(Map<String, dynamic> json) =>
       password: json['password'] as String,
       phoneNumber: json['phoneNumber'] as String?,
       imageUrl: json['imageUrl'] as String?,
-      likedPlaces: (json['likedPlaces'] as List<dynamic>?)
-          ?.map((e) => PlaceModel.fromJson(e as Map<String, dynamic>))
+      likedPlaces: (json['likedPlaces'] as List<dynamic>)
+          .map((e) => PlaceModel.fromJson(e as Map<String, dynamic>))
           .toList(),
-      bookmarkedPlaces: (json['bookmarkedPlaces'] as List<dynamic>?)
-          ?.map((e) => PlaceModel.fromJson(e as Map<String, dynamic>))
+      bookmarkedPlaces: (json['bookmarkedPlaces'] as List<dynamic>)
+          .map((e) => PlaceModel.fromJson(e as Map<String, dynamic>))
           .toList(),
       isOnline: json['isOnline'] as bool,
       lastVisit: DateTime.parse(json['lastVisit'] as String),
-      notifications: (json['notifications'] as List<dynamic>?)
-          ?.map((e) => NotificationModel.fromJson(e as Map<String, dynamic>))
+      notifications: (json['notifications'] as List<dynamic>)
+          .map((e) => NotificationModel.fromJson(e as Map<String, dynamic>))
           .toList(),
-      messages: (json['messages'] as List<dynamic>?)
-          ?.map((e) => MessageModel.fromJson(e as Map<String, dynamic>))
+      messages: (json['messages'] as List<dynamic>)
+          .map((e) => MessageModel.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
