@@ -22,8 +22,8 @@ class UserModel with _$UserModel {
     required List<PlaceModel>? bookmarkedPlaces,
     required bool isOnline,
     required DateTime lastVisit,
-    required List<NotificationModel>? notifications,
-    required List<MessageModel>? messages,
+    required List<NotificationModel> notifications,
+    required List<MessageModel> messages,
   }) = _UserModel;
 
   factory UserModel.fromJson(Map<String, Object?> json) =>

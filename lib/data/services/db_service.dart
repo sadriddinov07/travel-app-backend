@@ -5,14 +5,14 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:travel_app_backend/data/services/storage_service.dart';
 import 'package:travel_app_backend/domain/models/assistant_model/assistant_model.dart';
+import 'package:travel_app_backend/domain/models/message_model/message_model.dart';
 import 'package:travel_app_backend/domain/models/place_model/place_model.dart';
 import 'package:travel_app_backend/domain/models/user_model/user_model.dart';
 
 sealed class DBService {
   static final db = FirebaseDatabase.instance;
 
-////////////////////////Place///////////////////////////////////////////////////
-  ///Create Place
+  /// Place
   static Future<bool> storePlace(
     String name,
     String city,
@@ -51,12 +51,11 @@ sealed class DBService {
 
       return true;
     } catch (e) {
-      debugPrint("DB ERROR: $e");
+      debugPrint("DB ERROR (Place): $e");
       return false;
     }
   }
 
-  /// Read All Place
   static Future<List<PlaceModel>> readAllPlace() async {
     final folder = db.ref(Folder.place);
     final data = await folder.get();
@@ -67,50 +66,18 @@ sealed class DBService {
         .toList();
   }
 
-  /// Delete Place
   static Future<bool> deletePlace(String postId) async {
     try {
       final fbPost = db.ref(Folder.place).child(postId);
       await fbPost.remove();
       return true;
     } catch (e) {
+      debugPrint("DB ERROR (Place): $e");
       return false;
     }
   }
 
-  ///Update Place
-  static Future<bool> updatePlace(
-    String id,
-    String name,
-    String city,
-    String country,
-    String description,
-    double price,
-    AssistantModel assistantModel,
-    DateTime flyDate,
-  ) async {
-    try {
-      final fbPlace = db.ref(Folder.place).child(id);
-      await fbPlace.update({
-        "name": name,
-        "city": city,
-        "description": description,
-        "price": price,
-        "assistantModel": assistantModel,
-        "flyDate": flyDate,
-        "country": country
-      });
-
-      // fbPost.set(post.toJson());
-      return true;
-    } catch (e) {
-      debugPrint("DB ERROR: $e");
-      return false;
-    }
-  }
-
-  ////////////////////////User///////////////////////////////////////////////////
-  ///Create User
+  /// User
   static Future<bool> storeUser(
     String firstName,
     String location,
@@ -118,14 +85,15 @@ sealed class DBService {
     String password,
     bool isOnline,
     DateTime lastVisit,
-
+    File file,
   ) async {
     try {
       final folder = db.ref(Folder.user);
       final child = folder.push();
       final id = child.key!;
 
-
+      final String imageUrl =
+          await StoreService.uploadFile(file, Folder.userImages);
 
       final post = UserModel(
         id: id,
@@ -133,76 +101,46 @@ sealed class DBService {
         location: location,
         email: email,
         password: password,
-        imageUrl: null,
-        likedPlaces: null,
-        bookmarkedPlaces: null,
+        imageUrl: imageUrl,
+        likedPlaces: [],
+        bookmarkedPlaces: [],
         isOnline: isOnline,
         lastVisit: lastVisit,
-        notifications: null,
-        messages: null,
+        notifications: [],
+        messages: [],
       );
 
       await child.set(post.toJson());
 
       return true;
     } catch (e) {
-      debugPrint(
-          "DB ERROR:______________________________$e __________________________");
+      debugPrint("DB ERROR (User): $e");
       return false;
     }
   }
 
-  ///Read All User
-  static Future<List<UserModel>> readAllUser() async {
+  static Future<List<PlaceModel>> readAllUser() async {
     final folder = db.ref(Folder.user);
     final data = await folder.get();
 
     final json = jsonDecode(jsonEncode(data.value)) as Map;
     return json.values
-        .map((e) => UserModel.fromJson(e as Map<String, Object?>))
+        .map((e) => PlaceModel.fromJson(e as Map<String, Object?>))
         .toList();
   }
 
-  ///Delete User
   static Future<bool> deleteUser(String postId) async {
     try {
       final fbPost = db.ref(Folder.user).child(postId);
       await fbPost.remove();
       return true;
     } catch (e) {
+      debugPrint("DB ERROR (User): $e");
       return false;
     }
   }
 
-  ///Update User
-  static Future<bool> updateUser(
-    String id,
-    String firstName,
-    String lastName,
-    String location,
-    String email,
-    String password,
-    DateTime flyDate,
-  ) async {
-    try {
-      final fbUser = db.ref(Folder.user).child(id);
-      await fbUser.update({
-        "firstName": firstName,
-        "lastName": lastName,
-        "location": location,
-        "email": email,
-        "password": password,
-        "flyDate": flyDate,
-      });
-      return true;
-    } catch (e) {
-      debugPrint("DB ERROR: $e");
-      return false;
-    }
-  }
-
-  ////////////////////////Assistant///////////////////////////////////////////////////
-  ///Create Assistant
+  /// Assistant
   static Future<bool> storeAssistant(
     String firstName,
     String lastName,
@@ -238,55 +176,57 @@ sealed class DBService {
       await child.set(post.toJson());
       return true;
     } catch (e) {
-      debugPrint(
-          "Assistant DB ERROR:--------------------- $e ----------------------------");
+      debugPrint("DB ERROR (Assistant): $e");
       return false;
     }
   }
-/// Read All Assistant
-  static Future<List<AssistantModel>> readAllAssistant() async {
+
+  static Future<List<PlaceModel>> readAllAssistant() async {
     final folder = db.ref(Folder.assistant);
     final data = await folder.get();
 
     final json = jsonDecode(jsonEncode(data.value)) as Map;
     return json.values
-        .map((e) => AssistantModel.fromJson(e as Map<String, Object?>))
+        .map((e) => PlaceModel.fromJson(e as Map<String, Object?>))
         .toList();
   }
-/// Delete Assistant
+
   static Future<bool> deleteAssistant(String postId) async {
     try {
       final fbPost = db.ref(Folder.assistant).child(postId);
       await fbPost.remove();
       return true;
     } catch (e) {
+      debugPrint("DB ERROR (Assistant): $e");
       return false;
     }
   }
-///Update Assistant
-  static Future<bool> updateAssistant(
-    String id,
-    String firstName,
-    String lastName,
-    String location,
-    String email,
-    String password,
-    String phoneNumber,
+
+  static Future<bool> sendMessage(
+    UserModel fromUser,
+    UserModel toUser,
+    String content,
+    MessageType messageType,
   ) async {
     try {
-      final fbUser = db.ref(Folder.user).child(id);
-      await fbUser.update({
-        "id": id,
-        "firstName": firstName,
-        "lastName": lastName,
-        "location": location,
-        "email": email,
-        "password": password,
-        "phoneNumber": phoneNumber,
+      final folder = db.ref(Folder.user).child(toUser.id);
+      final id = folder.push().key!;
+
+      final message = MessageModel(
+        fromUser: fromUser,
+        toUser: toUser,
+        id: id,
+        content: content,
+        createdTime: DateTime.now(),
+        isSeen: false,
+        messageType: messageType,
+      );
+      folder.update({
+        "messages": [...fromUser.messages, message],
       });
       return true;
     } catch (e) {
-      debugPrint("DB ERROR: $e");
+      debugPrint("DB ERROR (Message): $e");
       return false;
     }
   }
@@ -295,7 +235,8 @@ sealed class DBService {
 sealed class Folder {
   /// Firebase Database folder
   static const assistant = "Assistant";
-  static const message = "Message";
+
+  // static const message = "Message";
   static const notification = "Notification";
   static const place = "Place";
   static const rating = "Rating";
