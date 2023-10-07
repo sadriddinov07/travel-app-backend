@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:travel_app_backend/data/services/db_service.dart';
 import 'package:travel_app_backend/presentation/pages/dashboard_page.dart';
 
 class AddModelPage extends StatelessWidget {
@@ -55,6 +56,60 @@ class AddModelPage extends StatelessWidget {
                 hintText: 'Phone Number',
               ),
             ),
+            SizedBox(height: 20),
+            GestureDetector(
+              onTap: () {},
+              child: Card(
+                child: Padding(
+                  padding: const EdgeInsets.all(100),
+                  child: Icon(Icons.add),
+                ),
+              ),
+            ),
+            if (model == Model.place)
+              TextField(
+                textInputAction: TextInputAction.next,
+                decoration: InputDecoration(
+                  hintText: 'Name',
+                ),
+              ),
+            SizedBox(height: 20),
+            TextField(
+              textInputAction: TextInputAction.next,
+              decoration: InputDecoration(
+                hintText: 'City',
+              ),
+            ),
+            SizedBox(height: 20),
+            TextField(
+              textInputAction: TextInputAction.next,
+              decoration: InputDecoration(
+                hintText: 'Country',
+              ),
+            ),
+            SizedBox(height: 20),
+            TextField(
+              textInputAction: TextInputAction.next,
+              decoration: InputDecoration(
+                hintText: 'Description',
+              ),
+            ),
+            SizedBox(height: 20),
+            TextField(
+              textInputAction: TextInputAction.next,
+              decoration: InputDecoration(
+                hintText: 'Price',
+              ),
+            ),
+            SizedBox(height: 20),
+            TextField(
+              textInputAction: TextInputAction.next,
+              decoration: InputDecoration(
+                hintText: 'Email',
+              ),
+            ),
+
+            /// TODO: File
             SizedBox(height: 20),
             GestureDetector(
               onTap: () {},
